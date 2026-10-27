@@ -1,0 +1,439 @@
+"""Monitor dei contenuti dei siti Gorilla (versione 2).
+
+Cosa controlla (solo libreria standard di Python):
+  - www.gorilla-technology.com  (tutte le pagine delle sitemap Yoast)
+  - www.gorillatech.capital     (Gorilla Tech Capital, tutte le pagine delle sitemap)
+  - investors.gorilla-technology.com (pagine elencate in EXTRA_PAGES)
+  - (opzionale) nuovi documenti su EDGAR, se imposti la variabile SEC_USER_AGENT
+
+Cosa segnala come "modifica vera":
+  pagina NUOVA / RIMOSSA, TESTO cambiato (con le righe aggiunte/tolte),
+  titolo o descrizione cambiati, link aggiunti/rimossi, cambio di menu/piè di pagina.
+  Un semplice cambio di data nella sitemap senza cambio di contenuto va solo nel log.
+
+Primo avvio = crea la base di confronto (nessun avviso).
+Avvisi: alerts.log (storico) e last_alert.txt (ultimo). Nessun popup (TOAST_ENABLED=False).
+"""
+import difflib
+import gzip
+import hashlib
+import json
+import os
+import re
+import sys
+import time
+import urllib.error
+import urllib.request
+import xml.etree.ElementTree as ET
+from datetime import datetime
+from html.parser import HTMLParser
+from pathlib import Path
+from urllib.parse import urljoin, urldefrag, urlparse
+
+# ----------------------------- CONFIGURAZIONE -----------------------------
+SOURCES = [
+    {"name": "Gorilla Technology", "sitemap_index": "https://www.gorilla-technology.com/sitemap_index.xml",
+     "domains": ["gorilla-technology.com"], "delay": 1.0},
+    {"name": "Gorilla Tech Capital", "sitemap_index": "https://www.gorillatech.capital/sitemap_index.xml",
+     "domains": ["gorillatech.capital"], "delay": 1.0},
+    {"name": "Gorilla IR", "pages": ["https://investors.gorilla-technology.com/",
+                                     "https://investors.gorilla-technology.com/press-releases/"],
+     "domains": ["investors.gorilla-technology.com"], "delay": 3.0},   # robots.txt: Crawl-delay 3
+]
+EDGAR_CIK = "0001903145"             # Gorilla Technology Group
+EDGAR_UA = os.environ.get("SEC_USER_AGENT", "").strip()   # es.: "Nome Cognome nome@email.it"; vuoto = disattivato
+EDGAR_FORMS_OF_INTEREST = None       # None = tutti i moduli; oppure {"6-K","20-F","424B5","424B7","F-3","SC 13G","SC 13D","4","3","144","D"}
+
+USER_AGENT = "Mozilla/5.0 (compatible; PersonalSiteMonitor/1.0; low-frequency)"
+FULL_CHECK_EVERY_HOURS = 6           # rilegge comunque ogni pagina almeno ogni N ore (anche senza cambio di sitemap)
+MIN_CHANGED_CHARS = 12               # ignora micro-variazioni sotto questa soglia
+MAX_DIFF_LINES = 8                   # righe mostrate per pagina
+MAX_PAGES_PER_SOURCE = 400
+MASS_CHANGE_RATIO = 0.30             # se cambia piu' del 30% delle pagine: avviso unico "cambio di tema/manutenzione"
+FAILS_BEFORE_ALERT = 6               # avvisa se una fonte non risponde per N controlli di fila
+TOAST_ENABLED = False
+
+# righe da ignorare nei confronti (cookie banner, anno del copyright, contatori)
+IGNORE_LINE_PATTERNS = [
+    r"^©", r"copyright", r"cookie", r"^loading", r"^skip to", r"^\d{1,2}:\d{2}(:\d{2})?$",
+    r"^\d+ (seconds?|minutes?|hours?) ago$",
+]
+
+HERE = Path(__file__).resolve().parent
+STATE = HERE / "state.json"
+SNAP = HERE / "snapshots"
+LOG = HERE / "monitor.log"
+ALERTS = HERE / "alerts.log"
+LAST_ALERT = HERE / "last_alert.txt"
+NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+SKIP_TAGS = {"script", "style", "noscript", "svg", "iframe", "template", "head"}
+BLOCK_TAGS = {"p", "div", "br", "li", "ul", "ol", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6",
+              "section", "article", "main", "header", "footer", "nav", "form", "table", "blockquote", "figure"}
+CHROME_TAGS = {"header", "nav", "footer"}
+IGNORE_RX = [re.compile(p, re.I) for p in IGNORE_LINE_PATTERNS]
+
+
+def log(msg: str) -> None:
+    line = f"{datetime.now():%Y-%m-%d %H:%M:%S}  {msg}"
+    with LOG.open("a", encoding="utf-8") as f:
+        f.write(line + "\n")
+    print(line)
+
+
+# ----------------------------- RETE -----------------------------
+def http_get(url, etag=None, last_mod=None, ua=USER_AGENT, accept="*/*"):
+    """Ritorna (status, bytes|None, headers). 304 = non modificato."""
+    err = None
+    for attempt in range(3):
+        try:
+            h = {"User-Agent": ua, "Accept": accept, "Accept-Encoding": "gzip"}
+            if etag:
+                h["If-None-Match"] = etag
+            if last_mod:
+                h["If-Modified-Since"] = last_mod
+            req = urllib.request.Request(url, headers=h)
+            with urllib.request.urlopen(req, timeout=40) as r:
+                data = r.read()
+                if r.headers.get("Content-Encoding") == "gzip":
+                    data = gzip.decompress(data)
+                return r.status, data, r.headers
+        except urllib.error.HTTPError as e:
+            if e.code == 304:
+                return 304, None, e.headers
+            err = e
+            if e.code in (403, 404, 410):
+                break
+        except Exception as e:  # noqa: BLE001
+            err = e
+        time.sleep(3 * (attempt + 1))
+    raise RuntimeError(f"{url}: {err}")
+
+
+# ----------------------------- ESTRAZIONE HTML -----------------------------
+class Extract(HTMLParser):
+    def __init__(self, base):
+        super().__init__(convert_charrefs=True)
+        self.base = base
+        self.skip = 0
+        self.chrome = 0
+        self.title = ""
+        self.in_title = False
+        self.desc = ""
+        self.content, self.chrome_lines = [], []
+        self.cur = []
+        self.links = set()
+
+    def flush(self):
+        t = re.sub(r"\s+", " ", "".join(self.cur)).strip()
+        self.cur = []
+        if t:
+            (self.chrome_lines if self.chrome else self.content).append(t)
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == "title":
+            self.in_title = True
+        if tag == "meta":
+            n = (a.get("name") or a.get("property") or "").lower()
+            if n in ("description", "og:description") and not self.desc:
+                self.desc = (a.get("content") or "").strip()
+        if tag in SKIP_TAGS and tag != "head":
+            self.skip += 1
+            return
+        if tag in BLOCK_TAGS:
+            self.flush()
+        if tag in CHROME_TAGS:
+            self.flush()
+            self.chrome += 1
+        if tag == "a" and a.get("href"):
+            u = urldefrag(urljoin(self.base, a["href"].strip()))[0]
+            if u.startswith("http"):
+                self.links.add(u.rstrip("/") if urlparse(u).path not in ("", "/") else u)
+
+    def handle_endtag(self, tag):
+        if tag == "title":
+            self.in_title = False
+        if tag in SKIP_TAGS and tag != "head":
+            self.skip = max(0, self.skip - 1)
+            return
+        if tag in BLOCK_TAGS:
+            self.flush()
+        if tag in CHROME_TAGS:
+            self.flush()
+            self.chrome = max(0, self.chrome - 1)
+
+    def handle_data(self, data):
+        if self.in_title:
+            self.title += data
+        elif not self.skip:
+            self.cur.append(data)
+
+
+def clean_lines(lines):
+    out = []
+    for ln in lines:
+        if any(rx.search(ln) for rx in IGNORE_RX):
+            continue
+        out.append(ln)
+    return out
+
+
+def parse_html(url, raw):
+    txt = raw.decode("utf-8", "ignore")
+    p = Extract(url)
+    p.feed(txt)
+    p.flush()
+    return {
+        "title": re.sub(r"\s+", " ", p.title).strip(),
+        "desc": p.desc,
+        "lines": clean_lines(p.content),
+        "chrome": clean_lines(p.chrome_lines),
+        "links": sorted(p.links),
+    }
+
+
+def sha(parts):
+    return hashlib.sha1("\n".join(parts).encode("utf-8")).hexdigest()
+
+
+# ----------------------------- SITEMAP -----------------------------
+def read_sitemap(url, depth=0):
+    """Ritorna lista di (url, lastmod) ricorrendo sugli indici."""
+    status, data, _ = http_get(url, accept="application/xml,text/xml,*/*")
+    root = ET.fromstring(data)
+    out = []
+    if root.tag.endswith("sitemapindex"):
+        for sm in root.findall("s:sitemap", NS):
+            loc = (sm.findtext("s:loc", default="", namespaces=NS) or "").strip()
+            if loc and depth < 2:
+                out.extend(read_sitemap(loc, depth + 1))
+    else:
+        for u in root.findall("s:url", NS):
+            loc = (u.findtext("s:loc", default="", namespaces=NS) or "").strip()
+            lm = (u.findtext("s:lastmod", default="", namespaces=NS) or "").strip()
+            if loc:
+                out.append((loc, lm))
+    return out
+
+
+def is_page(url):
+    return not re.search(r"\.(jpg|jpeg|png|gif|webp|svg|pdf|zip|mp4|css|js|xml)$", urlparse(url).path, re.I)
+
+
+# ----------------------------- SNAPSHOT -----------------------------
+def snap_path(url):
+    return SNAP / (hashlib.sha1(url.encode()).hexdigest()[:16] + ".json.gz")
+
+
+def load_snap(url):
+    p = snap_path(url)
+    if p.exists():
+        with gzip.open(p, "rt", encoding="utf-8") as f:
+            return json.load(f)
+    return None
+
+
+def save_snap(url, data):
+    SNAP.mkdir(exist_ok=True)
+    with gzip.open(snap_path(url), "wt", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False)
+
+
+def short(s, n=170):
+    s = s.strip()
+    return s if len(s) <= n else s[: n - 1] + "…"
+
+
+def diff_text(old, new):
+    sm = difflib.SequenceMatcher(None, old, new, autojunk=False)
+    rem, add = [], []
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag in ("replace", "delete"):
+            rem.extend(old[i1:i2])
+        if tag in ("replace", "insert"):
+            add.extend(new[j1:j2])
+    return rem, add
+
+
+def describe_change(url, old, new):
+    """Ritorna (lista righe descrittive, 'peso' in caratteri) oppure ([], 0) se non rilevante."""
+    out, weight = [], 0
+    if old["title"] != new["title"]:
+        out.append(f"   titolo: «{short(old['title'])}» -> «{short(new['title'])}»")
+        weight += len(new["title"])
+    if old["desc"] != new["desc"]:
+        out.append(f"   descrizione: «{short(old['desc'], 110)}» -> «{short(new['desc'], 110)}»")
+        weight += len(new["desc"])
+    rem, add = diff_text(old["lines"], new["lines"])
+    ch = sum(len(x) for x in rem) + sum(len(x) for x in add)
+    if ch >= MIN_CHANGED_CHARS:
+        weight += ch
+        for ln in rem[:MAX_DIFF_LINES]:
+            out.append("   - " + short(ln))
+        if len(rem) > MAX_DIFF_LINES:
+            out.append(f"   - … altre {len(rem) - MAX_DIFF_LINES} righe tolte")
+        for ln in add[:MAX_DIFF_LINES]:
+            out.append("   + " + short(ln))
+        if len(add) > MAX_DIFF_LINES:
+            out.append(f"   + … altre {len(add) - MAX_DIFF_LINES} righe aggiunte")
+    ol = {x for x in old["links"] if "blackhole=" not in x}   # trappola anti-bot con codice che cambia a ogni visita
+    nl = {x for x in new["links"] if "blackhole=" not in x}
+    la, lr = sorted(nl - ol), sorted(ol - nl)
+    if la:
+        out.append("   link aggiunti: " + ", ".join(short(x, 80) for x in la[:5]) + (f" (+{len(la) - 5})" if len(la) > 5 else ""))
+        weight += 20 * len(la)
+    if lr:
+        out.append("   link tolti: " + ", ".join(short(x, 80) for x in lr[:5]) + (f" (+{len(lr) - 5})" if len(lr) > 5 else ""))
+        weight += 20 * len(lr)
+    rem2, add2 = diff_text(old["chrome"], new["chrome"])
+    chc = sum(len(x) for x in rem2) + sum(len(x) for x in add2)
+    if chc >= MIN_CHANGED_CHARS:
+        out.append(f"   menu/piè di pagina cambiati ({chc} caratteri)")
+        weight += chc // 2
+    return out, weight
+
+
+# ----------------------------- CONTROLLO DI UNA FONTE -----------------------------
+def check_source(src, st, now):
+    name = src["name"]
+    sst = st["sources"].setdefault(name, {"pages": {}, "ready": False})
+    pages = sst["pages"]
+    items = []
+    if "sitemap_index" in src:
+        items = [(u, lm) for u, lm in read_sitemap(src["sitemap_index"]) if is_page(u)]
+    for u in src.get("pages", []):
+        items.append((u, ""))
+    seen = {}
+    for u, lm in items:
+        seen[u] = lm
+    urls = list(seen)[:MAX_PAGES_PER_SOURCE]
+    first_run = not sst["ready"]
+    events = []      # (tipo, url, righe descrittive, peso)
+    fetched = 0
+    for u in urls:
+        meta = pages.get(u)
+        lm = seen[u]
+        due = (meta is None or meta.get("lastmod") != lm or "pages" in src and u in src["pages"]
+               or now - meta.get("checked", 0) > FULL_CHECK_EVERY_HOURS * 3600)
+        if not due:
+            continue
+        try:
+            status, raw, hdr = http_get(u, etag=(meta or {}).get("etag"), last_mod=(meta or {}).get("lm"),
+                                        accept="text/html,*/*")
+        except Exception as e:  # noqa: BLE001
+            log(f"[{name}] errore lettura {u}: {e}")
+            continue
+        fetched += 1
+        time.sleep(src.get("delay", 1.0))
+        if status == 304:
+            meta["checked"] = now
+            meta["lastmod"] = lm
+            continue
+        new = parse_html(u, raw)
+        new["fetched"] = datetime.now().isoformat(timespec="seconds")
+        old = load_snap(u) if meta else None
+        pages[u] = {"lastmod": lm, "checked": now, "etag": hdr.get("ETag"), "lm": hdr.get("Last-Modified"),
+                    "hash": sha(new["lines"]), "title": new["title"]}
+        save_snap(u, new)
+        if first_run:
+            continue
+        if old is None:
+            events.append(("NUOVA PAGINA", u, [f"   titolo: «{short(new['title'])}»", f"   {len(' '.join(new['lines']))} caratteri di testo"], 1000))
+            continue
+        lines, weight = describe_change(u, old, new)
+        if lines:
+            events.append(("PAGINA MODIFICATA", u, lines, weight))
+        elif meta and meta.get("lastmod") != lm:
+            log(f"[{name}] solo data cambiata, contenuto uguale: {u}")
+    # pagine sparite
+    if not first_run:
+        for u in list(pages):
+            if u not in seen and "sitemap_index" in src:
+                events.append(("PAGINA RIMOSSA", u, ["   (non e' piu' nella sitemap)"], 1000))
+                del pages[u]
+    sst["ready"] = True
+    sst["count"] = len(urls)
+    if first_run:
+        log(f"[{name}] base creata: {len(urls)} pagine (nessun avviso)")
+    else:
+        log(f"[{name}] controllate {fetched} pagine su {len(urls)}; variazioni: {len(events)}")
+    return events, first_run, len(urls)
+
+
+# ----------------------------- EDGAR (opzionale) -----------------------------
+def check_edgar(st):
+    if not EDGAR_UA:
+        return []
+    sst = st["sources"].setdefault("EDGAR", {"seen": [], "ready": False})
+    status, data, _ = http_get(f"https://data.sec.gov/submissions/CIK{EDGAR_CIK}.json", ua=EDGAR_UA)
+    rec = json.loads(data)["filings"]["recent"]
+    cur = []
+    for i, acc in enumerate(rec["accessionNumber"][:60]):
+        cur.append({"acc": acc, "form": rec["form"][i], "date": rec["filingDate"][i], "doc": rec["primaryDocument"][i],
+                    "desc": (rec.get("primaryDocDescription") or [""] * 99)[i]})
+    events = []
+    if sst["ready"]:
+        known = set(sst["seen"])
+        for f in cur:
+            if f["acc"] not in known and (EDGAR_FORMS_OF_INTEREST is None or f["form"] in EDGAR_FORMS_OF_INTEREST):
+                url = f"https://www.sec.gov/Archives/edgar/data/{int(EDGAR_CIK)}/{f['acc'].replace('-', '')}/{f['doc']}"
+                events.append(("NUOVO DOCUMENTO SEC", url, [f"   {f['form']} del {f['date']} {f['desc']}"], 5000))
+    sst["seen"] = [f["acc"] for f in cur]
+    sst["ready"] = True
+    return events
+
+
+# ----------------------------- MAIN -----------------------------
+def main() -> int:
+    st = json.loads(STATE.read_text(encoding="utf-8-sig")) if STATE.exists() else {"sources": {}, "fails": {}}
+    now = time.time()
+    all_events = []
+    tasks = [(s["name"], lambda s=s: check_source(s, st, now)) for s in SOURCES]
+    for name, fn in tasks:
+        try:
+            events, first, n = fn()
+            st["fails"][name] = 0
+        except Exception as e:  # noqa: BLE001
+            st["fails"][name] = st["fails"].get(name, 0) + 1
+            log(f"[{name}] ERRORE: {e}")
+            if st["fails"][name] == FAILS_BEFORE_ALERT:
+                all_events.append((name, [("PROBLEMA", name, [f"   fonte non raggiungibile da {FAILS_BEFORE_ALERT} controlli di fila"], 9999)]))
+            continue
+        if not first and n and len(events) >= max(5, MASS_CHANGE_RATIO * n):
+            head = [f"   {len(events)} pagine su {n} cambiate nello stesso controllo: probabile cambio di tema, "
+                    f"manutenzione o aggiornamento di plugin. Primi esempi:"]
+            for typ, u, lines, w in events[:3]:
+                head.append(f"   {typ}: {u}")
+                head.extend(lines[:4])
+            events = [("CAMBIO DI MASSA", name, head, 9999)]
+        if events:
+            all_events.append((name, events))
+    try:
+        ev = check_edgar(st)
+        if ev:
+            all_events.append(("EDGAR Gorilla", ev))
+    except Exception as e:  # noqa: BLE001
+        log(f"[EDGAR] ERRORE: {e}")
+
+    if all_events:
+        stamp = f"{datetime.now():%Y-%m-%d %H:%M:%S}"
+        body = []
+        total = 0
+        for name, events in all_events:
+            body.append(f"[{name}]")
+            for typ, u, lines, w in sorted(events, key=lambda e: -e[3]):
+                body.append(f"  {typ}: {u}")
+                body.extend(lines)
+                total += 1
+            body.append("")
+        text = "\n".join(body).rstrip()
+        with ALERTS.open("a", encoding="utf-8") as f:
+            f.write(f"=== {stamp} ===\n{text}\n")
+        LAST_ALERT.write_text(f"{stamp}\n{text}\n", encoding="utf-8")
+        log(f"AVVISO: {total} variazioni\n{text}")
+    STATE.write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

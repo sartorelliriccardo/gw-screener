@@ -1,0 +1,56 @@
+﻿name: watch
+
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Controlla i siti
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: python monitor.py
+
+      - name: Rileva avvisi nuovi
+        run: |
+          if [ -n "$(git status --porcelain last_alert.txt)" ]; then echo "NEW_ALERT=1" >> "$GITHUB_ENV"; fi
+
+      - name: Aggiorna la pagina
+        run: python build_site.py
+
+      - name: Salva stato e pagina
+        run: |
+          git config user.name "gorilla-watch"
+          git config user.email "gorilla-watch@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "controllo $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git pull --rebase -q || true
+          git push
+
+      - name: Apri una segnalazione se ci sono modifiche
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$NEW_ALERT" = "1" ]; then
+            head -c 60000 last_alert.txt > body.txt
+            gh issue create --title "Modifica rilevata $(date -u +'%Y-%m-%d %H:%M') UTC" --body-file body.txt
+          fi
+
