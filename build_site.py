@@ -128,8 +128,7 @@ def main():
         feed = "".join(render_event(e) for e in hist)
     else:
         feed = ('<div class="empty"><strong>Nessuna modifica rilevata finora.</strong><br>Il confronto parte dalla situazione '
-                'registrata al primo avvio. Quando una pagina cambia compare qui, con le righe tolte e aggiunte e i link per aprirla. '
-                'Così apparirà (esempio):</div>' + render_event(SAMPLE, sample=True))
+                'registrata al primo avvio. Quando una pagina cambia compare qui, con le righe tolte e aggiunte e il link per aprirla.</div>')
     filters = '<button class="on" data-f="">Tutti</button>' + "".join(
         f'<button data-f="{esc(n)}">{esc(n)}</button>' for n in sources)
 
