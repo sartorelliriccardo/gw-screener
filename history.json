@@ -1,0 +1,57 @@
+[
+ {
+  "ts": "2026-10-27T11:40:22+00:00",
+  "source": "Gorilla Technology",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://www.gorilla-technology.com/about-us/cookie-policy/",
+  "text": [
+   "+ Name",
+   "+ fbapc_597242117012725",
+   "+ Expiration",
+   "+ Function"
+  ],
+  "detail": {
+   "page_title": "Gorilla Technology | Cookie Policy",
+   "title": null,
+   "desc": null,
+   "removed": [],
+   "n_removed": 0,
+   "added": [
+    "Name",
+    "fbapc_597242117012725",
+    "Expiration",
+    "Function"
+   ],
+   "n_added": 4,
+   "links_added": [],
+   "links_removed": [],
+   "chrome": 0
+  }
+ },
+ {
+  "ts": "2026-10-27T11:40:22+00:00",
+  "source": "Gorilla Tech Capital",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://www.gorillatech.capital/contact/",
+  "text": [
+   "- Contact",
+   "+ Newsletter"
+  ],
+  "detail": {
+   "page_title": "Contact - Gorilla Tech Capital",
+   "title": null,
+   "desc": null,
+   "removed": [
+    "Contact"
+   ],
+   "n_removed": 1,
+   "added": [
+    "Newsletter"
+   ],
+   "n_added": 1,
+   "links_added": [],
+   "links_removed": [],
+   "chrome": 0
+  }
+ }
+]
