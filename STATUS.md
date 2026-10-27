@@ -1,6 +1,6 @@
 # Gorilla Watch
 
-Ultimo aggiornamento: **2026-10-27 10:33 UTC**
+Ultimo aggiornamento: **2026-10-27 10:52 UTC**
 
 | Sito | Pagine | Ultimo controllo | Stato |
 |---|---|---|---|

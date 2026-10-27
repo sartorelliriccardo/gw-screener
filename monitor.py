@@ -25,7 +25,7 @@ import time
 import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
-from datetime import datetime
+from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin, urldefrag, urlparse
@@ -64,6 +64,7 @@ STATE = HERE / "state.json"
 SNAP = HERE / "snapshots"
 LOG = HERE / "monitor.log"
 ALERTS = HERE / "alerts.log"
+HISTORY = HERE / "history.json"
 LAST_ALERT = HERE / "last_alert.txt"
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 SKIP_TAGS = {"script", "style", "noscript", "svg", "iframe", "template", "head"}
@@ -255,6 +256,9 @@ def diff_text(old, new):
     return rem, add
 
 
+DETAIL = {}   # url -> dettagli strutturati dell'ultima variazione (per la pagina web)
+
+
 def describe_change(url, old, new):
     """Ritorna (lista righe descrittive, 'peso' in caratteri) oppure ([], 0) se non rilevante."""
     out, weight = [], 0
@@ -290,6 +294,16 @@ def describe_change(url, old, new):
     if chc >= MIN_CHANGED_CHARS:
         out.append(f"   menu/piè di pagina cambiati ({chc} caratteri)")
         weight += chc // 2
+    big = ch >= MIN_CHANGED_CHARS
+    DETAIL[url] = {
+        "page_title": new["title"] or url,
+        "title": [old["title"], new["title"]] if old["title"] != new["title"] else None,
+        "desc": [old["desc"], new["desc"]] if old["desc"] != new["desc"] else None,
+        "removed": rem[:MAX_DIFF_LINES] if big else [], "n_removed": len(rem) if big else 0,
+        "added": add[:MAX_DIFF_LINES] if big else [], "n_added": len(add) if big else 0,
+        "links_added": la[:30], "links_removed": lr[:30],
+        "chrome": chc if chc >= MIN_CHANGED_CHARS else 0,
+    }
     return out, weight
 
 
@@ -338,6 +352,7 @@ def check_source(src, st, now):
         if first_run:
             continue
         if old is None:
+            DETAIL[u] = {"page_title": new["title"] or u, "chars": len(" ".join(new["lines"]))}
             events.append(("NUOVA PAGINA", u, [f"   titolo: «{short(new['title'])}»", f"   {len(' '.join(new['lines']))} caratteri di testo"], 1000))
             continue
         lines, weight = describe_change(u, old, new)
@@ -431,6 +446,13 @@ def main() -> int:
             f.write(f"=== {stamp} ===\n{text}\n")
         LAST_ALERT.write_text(f"{stamp}\n{text}\n", encoding="utf-8")
         log(f"AVVISO: {total} variazioni\n{text}")
+        hist = json.loads(HISTORY.read_text(encoding="utf-8")) if HISTORY.exists() else []
+        iso = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        for name, events in all_events:
+            for typ, u, lines, w in sorted(events, key=lambda e: -e[3]):
+                hist.append({"ts": iso, "source": name, "type": typ, "url": u,
+                             "text": [x.strip() for x in lines], "detail": DETAIL.get(u)})
+        HISTORY.write_text(json.dumps(hist[-400:], ensure_ascii=False, indent=1), encoding="utf-8")
     STATE.write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
     return 0
 
