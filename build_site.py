@@ -52,6 +52,17 @@ def render_detail(ev):
     if ev["type"] == "NUOVA PAGINA":
         parts.append(f'<p class="muted">Pagina nuova, circa {d.get("chars", 0):,} caratteri di testo.</p>')
         return "".join(parts)
+    if d.get("sec"):
+        s = d["sec"]
+        parts.append(f'<p><strong>{esc(s["form"])}</strong> depositato il {esc(s["date"])}'
+                     + (f' · punti: {esc(s["items"])}' if s.get("items") else "") + "</p>")
+        if s.get("desc"):
+            parts.append(f'<p class="muted">{esc(s["desc"])}</p>')
+        if s.get("docs"):
+            parts.append('<div class="blk"><div class="lbl">Documenti del deposito</div>'
+                         + "".join(f'<div class="line add"><span class="sg">+</span>{link(x["url"], x["name"])}</div>' for x in s["docs"]) + "</div>")
+        parts.append(f'<p class="small">{link(s["index"], "Tutti i file su EDGAR ↗")}</p>')
+        return "".join(parts)
     if d.get("title"):
         parts.append('<div class="blk"><div class="lbl">Titolo</div>' + row("−", d["title"][0], "rem") + row("+", d["title"][1], "add") + "</div>")
     if d.get("desc"):

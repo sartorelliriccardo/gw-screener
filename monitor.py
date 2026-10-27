@@ -40,7 +40,9 @@ SOURCES = [
                                      "https://investors.gorilla-technology.com/press-releases/"],
      "domains": ["investors.gorilla-technology.com"], "delay": 3.0},   # robots.txt: Crawl-delay 3
 ]
-EDGAR_CIK = "0001903145"             # Gorilla Technology Group
+EDGAR_CIK = ""                       # vuoto = lo ricavo dal ticker e verifico il nome della societa'
+EDGAR_TICKER = "GRRR"
+EDGAR_NAME_CHECK = "gorilla"
 EDGAR_UA = os.environ.get("SEC_USER_AGENT", "").strip()   # es.: "Nome Cognome nome@email.it"; vuoto = disattivato
 EDGAR_FORMS_OF_INTEREST = None       # None = tutti i moduli; oppure {"6-K","20-F","424B5","424B7","F-3","SC 13G","SC 13D","4","3","144","D"}
 
@@ -380,19 +382,51 @@ def check_edgar(st):
     if not EDGAR_UA:
         return []
     sst = st["sources"].setdefault("EDGAR", {"seen": [], "ready": False})
-    status, data, _ = http_get(f"https://data.sec.gov/submissions/CIK{EDGAR_CIK}.json", ua=EDGAR_UA)
+    cik = sst.get("cik") or EDGAR_CIK
+    if not cik:   # risolvo il CIK dal ticker e controllo che sia davvero Gorilla
+        _, data, _ = http_get("https://www.sec.gov/files/company_tickers.json", ua=EDGAR_UA)
+        hit = [c for c in json.loads(data).values() if c.get("ticker", "").upper() == EDGAR_TICKER]
+        if not hit or EDGAR_NAME_CHECK not in hit[0].get("title", "").lower():
+            raise RuntimeError(f"EDGAR: ticker {EDGAR_TICKER} non corrisponde a {EDGAR_NAME_CHECK}: {hit}")
+        cik = f"{int(hit[0]['cik_str']):010d}"
+        sst["cik"] = cik
+        log(f"[EDGAR] CIK risolto: {cik} ({hit[0]['title']})")
+    status, data, _ = http_get(f"https://data.sec.gov/submissions/CIK{cik}.json", ua=EDGAR_UA)
     rec = json.loads(data)["filings"]["recent"]
+
+    def col(name, i):
+        v = rec.get(name) or []
+        return v[i] if i < len(v) else ""
+
     cur = []
     for i, acc in enumerate(rec["accessionNumber"][:60]):
         cur.append({"acc": acc, "form": rec["form"][i], "date": rec["filingDate"][i], "doc": rec["primaryDocument"][i],
-                    "desc": (rec.get("primaryDocDescription") or [""] * 99)[i]})
+                    "desc": col("primaryDocDescription", i), "items": col("items", i)})
     events = []
     if sst["ready"]:
         known = set(sst["seen"])
         for f in cur:
-            if f["acc"] not in known and (EDGAR_FORMS_OF_INTEREST is None or f["form"] in EDGAR_FORMS_OF_INTEREST):
-                url = f"https://www.sec.gov/Archives/edgar/data/{int(EDGAR_CIK)}/{f['acc'].replace('-', '')}/{f['doc']}"
-                events.append(("NUOVO DOCUMENTO SEC", url, [f"   {f['form']} del {f['date']} {f['desc']}"], 5000))
+            if f["acc"] in known or not (EDGAR_FORMS_OF_INTEREST is None or f["form"] in EDGAR_FORMS_OF_INTEREST):
+                continue
+            base = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{f['acc'].replace('-', '')}"
+            url = f"{base}/{f['doc']}"
+            docs = []
+            try:   # elenco degli allegati (comunicato, presentazione...) con i link diretti
+                _, idx, _ = http_get(f"{base}/index.json", ua=EDGAR_UA)
+                for it in json.loads(idx)["directory"]["item"]:
+                    if it["name"].lower().endswith((".htm", ".html", ".pdf", ".pptx", ".ppt", ".xml", ".txt")) and "index" not in it["name"].lower():
+                        docs.append({"name": it["name"], "url": f"{base}/{it['name']}"})
+            except Exception as e:  # noqa: BLE001
+                log(f"[EDGAR] indice non letto per {f['acc']}: {e}")
+            time.sleep(0.3)
+            DETAIL[url] = {"page_title": f"{f['form']}: {f['desc'] or f['items'] or f['doc']}",
+                           "sec": {"form": f["form"], "date": f["date"], "items": f["items"], "desc": f["desc"],
+                                   "acc": f["acc"], "index": f"{base}/{f['acc']}-index.htm", "docs": docs[:20]}}
+            lines = [f"   {f['form']} del {f['date']} {f['desc']}".rstrip()]
+            if f["items"]:
+                lines.append(f"   punti (items): {f['items']}")
+            lines += [f"   allegato: {d['url']}" for d in docs[:8]]
+            events.append(("NUOVO DOCUMENTO SEC", url, lines, 5000))
     sst["seen"] = [f["acc"] for f in cur]
     sst["ready"] = True
     return events
