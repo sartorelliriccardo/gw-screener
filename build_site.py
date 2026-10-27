@@ -10,7 +10,8 @@ MAX_EVENTS = 150
 
 BADGES = {
     "PAGINA MODIFICATA": ("modificata", "b-mod"), "NUOVA PAGINA": ("nuova pagina", "b-new"),
-    "PAGINA RIMOSSA": ("rimossa", "b-del"), "NUOVO DOCUMENTO SEC": ("documento SEC", "b-sec"),
+    "PAGINA RIMOSSA": ("rimossa", "b-del"), "NUOVO FILE": ("nuovo documento", "b-new"),
+    "FILE MODIFICATO": ("documento sostituito", "b-mod"), "NUOVO DOCUMENTO SEC": ("documento SEC", "b-sec"),
     "CAMBIO DI MASSA": ("cambio di massa", "b-mass"), "PROBLEMA": ("problema", "b-del"),
 }
 
@@ -51,6 +52,27 @@ def render_detail(ev):
     parts = []
     if ev["type"] == "NUOVA PAGINA":
         parts.append(f'<p class="muted">Pagina nuova, circa {d.get("chars", 0):,} caratteri di testo.</p>')
+        return "".join(parts)
+    if d.get("file"):
+        f = d["file"]
+        kb = f'{f["size"] // 1024} KB' + (f', {f["pages"]} pagine' if f.get("pages") else "")
+        if f["kind"] == "new":
+            parts.append(f'<p>Nuovo documento ({esc(kb)}), trovato su {link(f["page"], f["page"].split("//", 1)[-1])}</p>')
+            if f.get("head"):
+                parts.append('<div class="blk"><div class="lbl">Prime righe</div>'
+                             + "".join(f'<div class="line">{esc(t)}</div>' for t in f["head"]) + "</div>")
+        else:
+            was = f'{(f.get("old_size") or 0) // 1024} KB' + (f', {f["old_pages"]} pagine' if f.get("old_pages") else "")
+            parts.append(f'<p>Il file allo stesso indirizzo è stato <strong>sostituito</strong>: prima {esc(was)}, ora {esc(kb)}.</p>')
+            if f.get("removed") or f.get("added"):
+                b = '<div class="blk"><div class="lbl">Testo del documento</div>'
+                b += "".join(row("−", t, "rem") for t in f.get("removed", []))
+                if f.get("n_removed", 0) > len(f.get("removed", [])):
+                    b += f'<div class="more">… e altre {f["n_removed"] - len(f["removed"])} righe tolte</div>'
+                b += "".join(row("+", t, "add") for t in f.get("added", []))
+                if f.get("n_added", 0) > len(f.get("added", [])):
+                    b += f'<div class="more">… e altre {f["n_added"] - len(f["added"])} righe aggiunte</div>'
+                parts.append(b + "</div>")
         return "".join(parts)
     if d.get("sec"):
         s = d["sec"]

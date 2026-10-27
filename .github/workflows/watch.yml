@@ -24,6 +24,16 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Installa browser e lettore PDF
+        run: |
+          pip install playwright==1.49.1
+          python -m playwright install --with-deps chromium
+          sudo apt-get install -y -q poppler-utils
+
+      - name: Scarica le pagine IR con un browser vero
+        run: python render.py
+        continue-on-error: true
+
       - name: Controlla i siti
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}

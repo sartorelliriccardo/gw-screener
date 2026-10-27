@@ -20,11 +20,14 @@ import hashlib
 import json
 import os
 import re
+import shutil
+import subprocess
 import sys
 import time
 import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
+import zipfile
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
@@ -36,8 +39,12 @@ SOURCES = [
      "domains": ["gorilla-technology.com"], "delay": 1.0},
     {"name": "Gorilla Tech Capital", "sitemap_index": "https://www.gorillatech.capital/sitemap_index.xml",
      "domains": ["gorillatech.capital"], "delay": 1.0},
-    {"name": "Gorilla IR", "pages": ["https://investors.gorilla-technology.com/",
-                                     "https://investors.gorilla-technology.com/press-releases/"],
+    # Le pagine IR caricano elenchi e documenti con JavaScript: le legge render.py con un browser vero (cartella rendered/).
+    {"name": "Gorilla IR", "pages": ["https://investors.gorilla-technology.com/press-releases/",
+                                     "https://investors.gorilla-technology.com/events-presentations/",
+                                     "https://investors.gorilla-technology.com/quarterly-results/",
+                                     "https://investors.gorilla-technology.com/annual-reports/"],
+     "rendered_dir": "rendered", "track_docs": True,
      "domains": ["investors.gorilla-technology.com"], "delay": 3.0},   # robots.txt: Crawl-delay 3
 ]
 EDGAR_CIK = ""                       # vuoto = lo ricavo dal ticker e verifico il nome della societa'
@@ -74,6 +81,10 @@ BLOCK_TAGS = {"p", "div", "br", "li", "ul", "ol", "tr", "td", "th", "h1", "h2", 
               "section", "article", "main", "header", "footer", "nav", "form", "table", "blockquote", "figure"}
 CHROME_TAGS = {"header", "nav", "footer"}
 IGNORE_RX = [re.compile(p, re.I) for p in IGNORE_LINE_PATTERNS]
+DONEW_RX = re.compile(r"DoNew\('([^']+)'\s*,\s*'([0-9A-Fa-f]+)'")
+DOCEXT_RX = re.compile(r"\.(pdf|pptx?|xlsx?)$", re.I)
+MAX_FILE_MB = 40
+MAX_NEW_FILES_PER_RUN = 15
 
 
 def log(msg: str) -> None:
@@ -125,6 +136,8 @@ class Extract(HTMLParser):
         self.content, self.chrome_lines = [], []
         self.cur = []
         self.links = set()
+        self.docs = {}        # url del documento -> [hash dichiarato dalla pagina, etichetta]
+        self._doc = None
 
     def flush(self):
         t = re.sub(r"\s+", " ", "".join(self.cur)).strip()
@@ -149,13 +162,28 @@ class Extract(HTMLParser):
             self.flush()
             self.chrome += 1
         if tag == "a" and a.get("href"):
-            u = urldefrag(urljoin(self.base, a["href"].strip()))[0]
-            if u.startswith("http"):
-                self.links.add(u.rstrip("/") if urlparse(u).path not in ("", "/") else u)
+            href = a["href"].strip()
+            m = DONEW_RX.search(href)
+            if m:   # link a documento del tipo javascript:DoNew('url','hash'): l'hash cambia se il file viene sostituito
+                self.links.add(f"{m.group(1)}#sha={m.group(2)[:16]}")
+                self._doc = [m.group(1), m.group(2), ""]
+                self.docs.setdefault(m.group(1), [m.group(2), ""])
+            else:
+                u = urldefrag(urljoin(self.base, href))[0]
+                if u.startswith("http"):
+                    self.links.add(u.rstrip("/") if urlparse(u).path not in ("", "/") else u)
+                    if DOCEXT_RX.search(urlparse(u).path):
+                        self._doc = [u, "", ""]
+                        self.docs.setdefault(u, ["", ""])
 
     def handle_endtag(self, tag):
         if tag == "title":
             self.in_title = False
+        if tag == "a" and self._doc is not None:
+            label = re.sub(r"\s+", " ", self._doc[2]).strip()
+            if label and not self.docs[self._doc[0]][1]:
+                self.docs[self._doc[0]][1] = label
+            self._doc = None
         if tag in SKIP_TAGS and tag != "head":
             self.skip = max(0, self.skip - 1)
             return
@@ -170,6 +198,8 @@ class Extract(HTMLParser):
             self.title += data
         elif not self.skip:
             self.cur.append(data)
+            if self._doc is not None:
+                self._doc[2] += data
 
 
 def clean_lines(lines):
@@ -192,6 +222,7 @@ def parse_html(url, raw):
         "lines": clean_lines(p.content),
         "chrome": clean_lines(p.chrome_lines),
         "links": sorted(p.links),
+        "docs": [[u, v[0], v[1]] for u, v in sorted(p.docs.items())],
     }
 
 
@@ -309,6 +340,99 @@ def describe_change(url, old, new):
     return out, weight
 
 
+# ----------------------------- DOCUMENTI (PDF / PowerPoint) -----------------------------
+def rendered_slug(url):
+    return urlparse(url).path.strip("/").replace("/", "_") or "home"
+
+
+def pptx_text(data):
+    import io
+    out = []
+    with zipfile.ZipFile(io.BytesIO(data)) as z:
+        names = sorted((n for n in z.namelist() if re.match(r"ppt/slides/slide\d+\.xml$", n)),
+                       key=lambda n: int(re.findall(r"\d+", n)[0]))
+        for n in names:
+            root = ET.fromstring(z.read(n))
+            out.append(" ".join(t.text for t in root.iter("{http://schemas.openxmlformats.org/drawingml/2006/main}t") if t.text))
+    return "\n\f".join(out)
+
+
+def doc_text(url, data):
+    path = urlparse(url).path.lower()
+    try:
+        if path.endswith(".pdf") and data[:4] == b"%PDF" and shutil.which("pdftotext"):
+            p = subprocess.run([shutil.which("pdftotext"), "-layout", "-", "-"], input=data, capture_output=True, timeout=90)
+            return p.stdout.decode("utf-8", "ignore") if p.returncode == 0 else None
+        if path.endswith(".pptx"):
+            return pptx_text(data)
+    except Exception as e:  # noqa: BLE001
+        log(f"[doc] testo non estratto da {url}: {e}")
+    return None
+
+
+def doc_lines(text):
+    return [re.sub(r"\s+", " ", x).strip() for x in (text or "").splitlines() if re.sub(r"[\s\f]+", "", x)]
+
+
+def doc_txt_path(url):
+    return SNAP / ("doc_" + hashlib.sha1(url.encode()).hexdigest()[:16] + ".txt.gz")
+
+
+def track_docs(sst, docs, page_url, first_run):
+    """Scarica i documenti linkati dalla pagina e segnala quelli nuovi o sostituiti (stesso link ma contenuto diverso)."""
+    files = sst.setdefault("files", {})
+    events, downloaded = [], 0
+    for u, h, label in docs:
+        rec = files.get(u)
+        if rec and rec.get("h") == h:
+            continue
+        if not first_run and downloaded >= MAX_NEW_FILES_PER_RUN:
+            break
+        try:
+            req = urllib.request.Request(u, headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                data = r.read(MAX_FILE_MB * 1024 * 1024 + 1)
+        except Exception as e:  # noqa: BLE001
+            log(f"[doc] errore download {u}: {e}")
+            continue
+        downloaded += 1
+        time.sleep(1.0)
+        if len(data) > MAX_FILE_MB * 1024 * 1024:
+            files[u] = {"h": h, "big": True, "label": label}
+            continue
+        digest = hashlib.sha256(data).hexdigest()
+        text = doc_text(u, data)
+        lines = doc_lines(text)
+        pages = text.count("\f") + (0 if text.rstrip().endswith("\f") else 1) if text and text.strip() else None
+        old_lines = []
+        if rec and doc_txt_path(u).exists():
+            with gzip.open(doc_txt_path(u), "rt", encoding="utf-8") as f:
+                old_lines = json.load(f)
+        if lines:
+            SNAP.mkdir(exist_ok=True)
+            with gzip.open(doc_txt_path(u), "wt", encoding="utf-8") as f:
+                json.dump(lines, f, ensure_ascii=False)
+        files[u] = {"h": h, "sha": digest, "size": len(data), "pages": pages, "label": label or (rec or {}).get("label", ""),
+                    "page": page_url}
+        if first_run:
+            continue
+        name = label or u.rsplit("/", 1)[-1]
+        kb = f"{len(data) // 1024} KB" + (f", {pages} pagine" if pages else "")
+        if rec is None:
+            DETAIL[u] = {"page_title": name, "file": {"kind": "new", "size": len(data), "pages": pages, "sha": digest[:12],
+                                                     "head": lines[:6], "page": page_url}}
+            events.append(("NUOVO FILE", u, [f"   {name} ({kb})", f"   trovato su {page_url}"] + [f"   {x[:120]}" for x in lines[:3]], 3000))
+        elif rec.get("sha") and rec.get("sha") != digest:
+            rem, add = diff_text(old_lines, lines) if old_lines and lines else ([], [])
+            DETAIL[u] = {"page_title": name, "file": {"kind": "changed", "size": len(data), "pages": pages, "sha": digest[:12],
+                                                     "old_size": rec.get("size"), "old_pages": rec.get("pages"),
+                                                     "removed": rem[:MAX_DIFF_LINES], "added": add[:MAX_DIFF_LINES],
+                                                     "n_removed": len(rem), "n_added": len(add), "page": page_url}}
+            events.append(("FILE MODIFICATO", u, [f"   {name}: ora {kb} (prima {(rec.get('size') or 0) // 1024} KB)"]
+                           + [f"   - {short(x)}" for x in rem[:4]] + [f"   + {short(x)}" for x in add[:4]], 4000))
+    return events
+
+
 # ----------------------------- CONTROLLO DI UNA FONTE -----------------------------
 def check_source(src, st, now):
     name = src["name"]
@@ -333,14 +457,21 @@ def check_source(src, st, now):
                or now - meta.get("checked", 0) > FULL_CHECK_EVERY_HOURS * 3600)
         if not due:
             continue
-        try:
-            status, raw, hdr = http_get(u, etag=(meta or {}).get("etag"), last_mod=(meta or {}).get("lm"),
-                                        accept="text/html,*/*")
-        except Exception as e:  # noqa: BLE001
-            log(f"[{name}] errore lettura {u}: {e}")
-            continue
+        if src.get("rendered_dir"):   # pagina gia' caricata da un browser vero (render.py); se manca la salto
+            rf = HERE / src["rendered_dir"] / (rendered_slug(u) + ".html")
+            if not rf.exists():
+                log(f"[{name}] pagina non scaricata dal browser, salto: {u}")
+                continue
+            status, raw, hdr = 200, rf.read_bytes(), {}
+        else:
+            try:
+                status, raw, hdr = http_get(u, etag=(meta or {}).get("etag"), last_mod=(meta or {}).get("lm"),
+                                            accept="text/html,*/*")
+            except Exception as e:  # noqa: BLE001
+                log(f"[{name}] errore lettura {u}: {e}")
+                continue
+            time.sleep(src.get("delay", 1.0))
         fetched += 1
-        time.sleep(src.get("delay", 1.0))
         if status == 304:
             meta["checked"] = now
             meta["lastmod"] = lm
@@ -351,6 +482,8 @@ def check_source(src, st, now):
         pages[u] = {"lastmod": lm, "checked": now, "etag": hdr.get("ETag"), "lm": hdr.get("Last-Modified"),
                     "hash": sha(new["lines"]), "title": new["title"]}
         save_snap(u, new)
+        if src.get("track_docs") and "press-releases" not in u:
+            events.extend(track_docs(sst, new.get("docs", []), u, first_run))
         if first_run:
             continue
         if old is None:
@@ -368,7 +501,8 @@ def check_source(src, st, now):
             if u not in seen and "sitemap_index" in src:
                 events.append(("PAGINA RIMOSSA", u, ["   (non e' piu' nella sitemap)"], 1000))
                 del pages[u]
-    sst["ready"] = True
+    if fetched or not first_run:   # se al primo giro non ho potuto leggere nulla (es. browser non partito) la base non e' pronta
+        sst["ready"] = True
     sst["count"] = len(urls)
     if first_run:
         log(f"[{name}] base creata: {len(urls)} pagine (nessun avviso)")

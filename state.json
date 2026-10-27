@@ -2899,33 +2899,10 @@
    },
    "ready": true,
    "count": 112
-  },
-  "Gorilla IR": {
-   "pages": {
-    "https://investors.gorilla-technology.com/": {
-     "lastmod": "",
-     "checked": 1792763244.8895037,
-     "etag": null,
-     "lm": null,
-     "hash": "0ac3863065e0ac78748a340849960a5e9e421f2c",
-     "title": "Investors Overview - Gorilla Technology"
-    },
-    "https://investors.gorilla-technology.com/press-releases/": {
-     "lastmod": "",
-     "checked": 1792763244.8895037,
-     "etag": null,
-     "lm": null,
-     "hash": "b8eb1665d83d267dc4e6b0d4800ac8dd86db3e17",
-     "title": "Press Releases - Gorilla Technology"
-    }
-   },
-   "ready": true,
-   "count": 2
   }
  },
  "fails": {
   "Gorilla Technology": 0,
-  "Gorilla Tech Capital": 0,
-  "Gorilla IR": 0
+  "Gorilla Tech Capital": 0
  }
 }
