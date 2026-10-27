@@ -3,6 +3,7 @@
 Salva l'HTML gia' completo in rendered/<nome>.html; monitor.py lo legge al posto della pagina "vuota".
 Rispetta il Crawl-delay del sito (3 secondi tra una pagina e l'altra).
 """
+import json
 import shutil
 import sys
 import time
@@ -13,6 +14,9 @@ from playwright.sync_api import sync_playwright
 import monitor
 
 OUT = Path(__file__).resolve().parent / "rendered"
+STATS = Path(__file__).resolve().parent / "render_stats.json"   # quanti link aveva l'ultima versione completa di ogni pagina
+MIN_RATIO = 0.8
+ATTEMPTS = 3
 
 
 def main() -> int:
@@ -22,27 +26,40 @@ def main() -> int:
     for src in monitor.SOURCES:
         if src.get("rendered_dir"):
             jobs += [(u, src.get("delay", 3.0)) for u in src.get("pages", [])]
+    try:
+        stats = json.loads(STATS.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        stats = {}
     ok = 0
     with sync_playwright() as p:
         browser = p.chromium.launch()
         ctx = browser.new_context(user_agent=monitor.USER_AGENT, locale="en-US", viewport={"width": 1280, "height": 900})
         for url, delay in jobs:
-            for attempt in range(2):
+            best, best_n = None, -1
+            for attempt in range(ATTEMPTS):
                 try:
                     page = ctx.new_page()
                     page.goto(url, wait_until="networkidle", timeout=90000)
-                    page.wait_for_timeout(4000)   # tempo ai widget di compilare gli elenchi
+                    page.wait_for_timeout(4000 + 4000 * attempt)   # i widget a volte compilano l'elenco in ritardo (o per niente)
+                    n = page.evaluate("document.querySelectorAll('a[href]').length")
                     html = page.content()
                     page.close()
-                    (OUT / (monitor.rendered_slug(url) + ".html")).write_text(html, encoding="utf-8")
-                    ok += 1
-                    print("ok", url, len(html), flush=True)
-                    break
+                    if n > best_n:
+                        best, best_n = html, n
+                    if n >= MIN_RATIO * stats.get(url, 0):
+                        break
+                    print(f"pagina incompleta ({n} link, prima {stats[url]}), riprovo: {url}", flush=True)
                 except Exception as e:  # noqa: BLE001
                     print("errore", url, e, flush=True)
-                    time.sleep(5)
+                time.sleep(5)
+            if best is not None:
+                (OUT / (monitor.rendered_slug(url) + ".html")).write_text(best, encoding="utf-8")
+                stats[url] = best_n if best_n < MIN_RATIO * stats.get(url, 0) else max(best_n, stats.get(url, 0))
+                ok += 1
+                print("ok", url, len(best), best_n, "link", flush=True)
             time.sleep(delay)
         browser.close()
+    STATS.write_text(json.dumps(stats, indent=1), encoding="utf-8")
     print(f"{ok}/{len(jobs)} pagine scaricate")
     return 0
 
