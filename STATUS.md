@@ -1,14 +1,34 @@
 # Gorilla Watch
 
-Ultimo aggiornamento: **2026-10-27 16:50 UTC**
+Ultimo aggiornamento: **2026-10-27 17:53 UTC**
 
 | Sito | Pagine | Ultimo controllo | Stato |
 |---|---|---|---|
-| Gorilla Technology | 248 | 2026-10-27 11:30 UTC | ok |
-| Gorilla Tech Capital | 112 | 2026-10-27 11:30 UTC | ok |
-| Gorilla IR | 4 | 2026-10-27 16:50 UTC | ok |
+| Gorilla Technology | 248 | 2026-10-27 17:46 UTC | ok |
+| Gorilla Tech Capital | 112 | 2026-10-27 17:46 UTC | ok |
+| Gorilla IR | 4 | 2026-10-27 17:46 UTC | ok |
 
 ## Ultime modifiche rilevate
+
+### [Annual Reports - Gorilla Technology](https://investors.gorilla-technology.com/annual-reports/)
+2026-10-27 17:53 UTC · Gorilla IR · pagina modificata
+
+- ~~Apr 15, 2026 PDF~~
+- ~~Annual and transition report of foreign private issuers~~
+- ~~Apr 30, 2025 PDF~~
+- ~~Annual and transition report of foreign private issuers~~
+- ~~May 15, 2024 PDF~~
+- ~~Annual and transition report of foreign private issuers~~
+- ~~Apr 28, 2023 PDF~~
+- ~~Annual and transition report of foreign private issuers~~
+- link tolto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-23-033461.htm
+- link tolto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-23-033461.pdf
+- link tolto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-24-043724.htm
+- link tolto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-24-043724.pdf
+- link tolto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-25-037703.htm
+- link tolto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-25-037703.pdf
+- link tolto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001437749-26-012385.htm
+- link tolto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001437749-26-012385.pdf
 
 ### [Annual Reports - Gorilla Technology](https://investors.gorilla-technology.com/annual-reports/)
 2026-10-27 15:58 UTC · Gorilla IR · pagina modificata
