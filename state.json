@@ -2896,7 +2896,7 @@
    "pages": {
     "https://investors.gorilla-technology.com/press-releases/": {
      "lastmod": "",
-     "checked": 1793109839.8769715,
+     "checked": 1793112691.0976954,
      "etag": null,
      "lm": null,
      "hash": "aae6b6f634981d88bd0d23151752898bd8c2da10",
@@ -2904,7 +2904,7 @@
     },
     "https://investors.gorilla-technology.com/events-presentations/": {
      "lastmod": "",
-     "checked": 1793109839.8769715,
+     "checked": 1793112691.0976954,
      "etag": null,
      "lm": null,
      "hash": "753caba692e74a73d23a6b3b1fae69dfa76b6d58",
@@ -2912,7 +2912,7 @@
     },
     "https://investors.gorilla-technology.com/quarterly-results/": {
      "lastmod": "",
-     "checked": 1793109839.8769715,
+     "checked": 1793112691.0976954,
      "etag": null,
      "lm": null,
      "hash": "104eb60bba4f9fcc7c94595726f513461a9a981b",
@@ -2920,10 +2920,10 @@
     },
     "https://investors.gorilla-technology.com/annual-reports/": {
      "lastmod": "",
-     "checked": 1793109839.8769715,
+     "checked": 1793112691.0976954,
      "etag": null,
      "lm": null,
-     "hash": "ae85c07c1c6e3687dfef3bd75f342f34f327e26b",
+     "hash": "04866d218e745fec5e649e30d19707600373e8ff",
      "title": "Annual Reports - Gorilla Technology"
     }
    },
@@ -3064,6 +3064,38 @@
      "pages": 8,
      "label": "Earnings Release",
      "page": "https://investors.gorilla-technology.com/quarterly-results/"
+    },
+    "https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-23-033461.pdf": {
+     "h": "",
+     "sha": "346bb672d150177be833d0717073e29cde07800352238293821cb50dd057f105",
+     "size": 1460565,
+     "pages": 162,
+     "label": "PDF",
+     "page": "https://investors.gorilla-technology.com/annual-reports/"
+    },
+    "https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-24-043724.pdf": {
+     "h": "",
+     "sha": "2354e2769f69b2d292303f2b36f2e2acb72051600796ebcbcbbaeffbdad392fd",
+     "size": 1478704,
+     "pages": 147,
+     "label": "PDF",
+     "page": "https://investors.gorilla-technology.com/annual-reports/"
+    },
+    "https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-25-037703.pdf": {
+     "h": "",
+     "sha": "afe46c7875e20c7c3c4a5e76a744ab4df0f749d984724b410a1c8e1b7fae807f",
+     "size": 1274343,
+     "pages": 127,
+     "label": "PDF",
+     "page": "https://investors.gorilla-technology.com/annual-reports/"
+    },
+    "https://s3.amazonaws.com/sec.irpass.cc/2980/0001437749-26-012385.pdf": {
+     "h": "",
+     "sha": "c133a124a1713dcd6c52a68209c98ddc3e1f7846402c9374ec69300642faf154",
+     "size": 1319858,
+     "pages": 169,
+     "label": "PDF",
+     "page": "https://investors.gorilla-technology.com/annual-reports/"
     }
    },
    "count": 4
