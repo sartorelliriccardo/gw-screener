@@ -338,14 +338,6 @@
      "hash": "378d57c9d31d7d1e1e5d266b0cfc7a3c69539c49",
      "title": "Gorilla Technology | Smart Retail Solutions"
     },
-    "https://www.gorilla-technology.com/about-us/cookie-policy/": {
-     "lastmod": "2026-07-02T07:57:40+00:00",
-     "checked": 1793100659.7459586,
-     "etag": null,
-     "lm": "Tue, 27 Oct 2026 09:08:07 GMT",
-     "hash": "9ff7ed048f750a968fd5a0b8a9e1a5f2e13564b3",
-     "title": "Gorilla Technology | Cookie Policy"
-    },
     "https://www.gorilla-technology.com/about-us/terms-of-service/": {
      "lastmod": "2026-07-02T07:58:18+00:00",
      "checked": 1793100659.7459586,
@@ -1996,7 +1988,7 @@
     }
    },
    "ready": true,
-   "count": 249
+   "count": 248
   },
   "Gorilla Tech Capital": {
    "pages": {
@@ -2904,7 +2896,7 @@
    "pages": {
     "https://investors.gorilla-technology.com/press-releases/": {
      "lastmod": "",
-     "checked": 1793100659.7459586,
+     "checked": 1793105158.028725,
      "etag": null,
      "lm": null,
      "hash": "aae6b6f634981d88bd0d23151752898bd8c2da10",
@@ -2912,7 +2904,7 @@
     },
     "https://investors.gorilla-technology.com/events-presentations/": {
      "lastmod": "",
-     "checked": 1793100659.7459586,
+     "checked": 1793105158.028725,
      "etag": null,
      "lm": null,
      "hash": "753caba692e74a73d23a6b3b1fae69dfa76b6d58",
@@ -2920,7 +2912,7 @@
     },
     "https://investors.gorilla-technology.com/quarterly-results/": {
      "lastmod": "",
-     "checked": 1793100659.7459586,
+     "checked": 1793105158.028725,
      "etag": null,
      "lm": null,
      "hash": "104eb60bba4f9fcc7c94595726f513461a9a981b",
@@ -2928,7 +2920,7 @@
     },
     "https://investors.gorilla-technology.com/annual-reports/": {
      "lastmod": "",
-     "checked": 1793100659.7459586,
+     "checked": 1793105158.028725,
      "etag": null,
      "lm": null,
      "hash": "ae85c07c1c6e3687dfef3bd75f342f34f327e26b",
