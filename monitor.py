@@ -83,6 +83,7 @@ CHROME_TAGS = {"header", "nav", "footer"}
 IGNORE_RX = [re.compile(p, re.I) for p in IGNORE_LINE_PATTERNS]
 DONEW_RX = re.compile(r"DoNew\('([^']+)'\s*,\s*'([0-9A-Fa-f]+)'")
 DOCEXT_RX = re.compile(r"\.(pdf|pptx?|xlsx?)$", re.I)
+SKIP_URL_PATTERNS = ["cookie-policy"]   # pagine che cambiano da sole (elenco cookie con codici casuali)
 MAX_FILE_MB = 40
 MAX_NEW_FILES_PER_RUN = 15
 
@@ -445,6 +446,9 @@ def check_source(src, st, now):
         items.append((u, ""))
     seen = {}
     for u, lm in items:
+        if any(p in u for p in SKIP_URL_PATTERNS):
+            pages.pop(u, None)
+            continue
         seen[u] = lm
     urls = list(seen)[:MAX_PAGES_PER_SOURCE]
     first_run = not sst["ready"]

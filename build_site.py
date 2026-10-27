@@ -226,6 +226,9 @@ document.querySelectorAll('time[datetime]').forEach(function(t){{var d=new Date(
 </script></body></html>"""
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(page, encoding="utf-8")
+    # copia anche nella radice: cosi' il sito funziona sia con Pages su /docs sia su "/ (root)"
+    (HERE / "index.html").write_text(page, encoding="utf-8")
+    (HERE / "robots.txt").write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
     print("scritto", OUT)
     write_status(st, now, hist, sources)
 
