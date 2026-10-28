@@ -59,6 +59,7 @@ MIN_CHANGED_CHARS = 12               # ignora micro-variazioni sotto questa sogl
 MAX_DIFF_LINES = 8                   # righe mostrate per pagina
 MAX_PAGES_PER_SOURCE = 400
 MASS_CHANGE_RATIO = 0.30             # se cambia piu' del 30% delle pagine: avviso unico "cambio di tema/manutenzione"
+SHRINK_CONFIRM = 12               # controlli di fila (~12 ore) prima di credere che una pagina IR si sia davvero svuotata
 SHRINK_RATIO = 0.5                # sotto questa frazione di righe la pagina IR e' sospetta (render incompleto)
 FAILS_BEFORE_ALERT = 6               # avvisa se una fonte non risponde per N controlli di fila
 TOAST_ENABLED = False
@@ -485,12 +486,12 @@ def check_source(src, st, now):
         new["fetched"] = datetime.now().isoformat(timespec="seconds")
         old = load_snap(u) if meta else None
         if (src.get("rendered_dir") and old and len(old["lines"]) >= 6
-                and len(new["lines"]) < SHRINK_RATIO * len(old["lines"]) and meta.get("pending", 0) < 1):
+                and len(new["lines"]) < SHRINK_RATIO * len(old["lines"]) and meta.get("pending", 0) < SHRINK_CONFIRM):
             # pagina IR che di colpo perde piu' di meta' del testo: quasi sempre il widget non ha caricato l'elenco.
-            # Non tocco la versione salvata; se al controllo dopo e' ancora cosi', allora e' vero.
+            # Non tocco la versione salvata; se resta cosi' per SHRINK_CONFIRM controlli di fila (~12 ore), allora e' vero.
             meta["pending"] = meta.get("pending", 0) + 1
             meta["checked"] = now - FULL_CHECK_EVERY_HOURS * 3600 + 600
-            log(f"[{name}] pagina molto piu' corta ({len(old['lines'])} -> {len(new['lines'])} righe), attendo conferma: {u}")
+            log(f"[{name}] pagina molto piu' corta ({len(old['lines'])} -> {len(new['lines'])} righe), attendo conferma ({meta["pending"]}/{SHRINK_CONFIRM}): {u}")
             continue
         pages[u] = {"lastmod": lm, "checked": now, "etag": hdr.get("ETag"), "lm": hdr.get("Last-Modified"),
                     "hash": sha(new["lines"]), "title": new["title"]}
