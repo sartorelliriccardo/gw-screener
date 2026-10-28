@@ -295,6 +295,12 @@ def diff_text(old, new):
 DETAIL = {}   # url -> dettagli strutturati dell'ultima variazione (per la pagina web)
 
 
+def is_trivial(rem, add):
+    """Poche righe di una o due parole, senza numeri (es. 'Notify' -> 'Subscribe'): etichette, non contenuti."""
+    lines = rem + add
+    return bool(lines) and len(rem) <= 3 and len(add) <= 3 and all(len(x.split()) <= 2 and not re.search(r"\d", x) for x in lines)
+
+
 def describe_change(url, old, new):
     """Ritorna (lista righe descrittive, 'peso' in caratteri) oppure ([], 0) se non rilevante."""
     out, weight = [], 0
@@ -306,6 +312,8 @@ def describe_change(url, old, new):
         weight += len(new["desc"])
     rem, add = diff_text(old["lines"], new["lines"])
     ch = sum(len(x) for x in rem) + sum(len(x) for x in add)
+    if is_trivial(rem, add):   # una parola di un pulsante/etichetta che cambia: non conta
+        rem, add, ch = [], [], 0
     if ch >= MIN_CHANGED_CHARS:
         weight += ch
         for ln in rem[:MAX_DIFF_LINES]:
