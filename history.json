@@ -143,5 +143,57 @@
    "links_removed": [],
    "chrome": 0
   }
+ },
+ {
+  "ts": "2026-10-28T07:01:42+00:00",
+  "source": "Gorilla Tech Capital",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://www.gorillatech.capital/entrepreneurs/",
+  "text": [
+   "- Newsletter",
+   "+ Subscribe"
+  ],
+  "detail": {
+   "page_title": "For Entrepreneurs - Gorilla Tech Capital",
+   "title": null,
+   "desc": null,
+   "removed": [
+    "Newsletter"
+   ],
+   "n_removed": 1,
+   "added": [
+    "Subscribe"
+   ],
+   "n_added": 1,
+   "links_added": [],
+   "links_removed": [],
+   "chrome": 0
+  }
+ },
+ {
+  "ts": "2026-10-28T07:01:42+00:00",
+  "source": "Gorilla Tech Capital",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://www.gorillatech.capital/contact/",
+  "text": [
+   "- Newsletter",
+   "+ Updates"
+  ],
+  "detail": {
+   "page_title": "Contact - Gorilla Tech Capital",
+   "title": null,
+   "desc": null,
+   "removed": [
+    "Newsletter"
+   ],
+   "n_removed": 1,
+   "added": [
+    "Updates"
+   ],
+   "n_added": 1,
+   "links_added": [],
+   "links_removed": [],
+   "chrome": 0
+  }
  }
 ]

@@ -1,5 +1,8 @@
-2026-10-28 00:15:49
+2026-10-28 07:01:42
 [Gorilla Tech Capital]
   PAGINA MODIFICATA: https://www.gorillatech.capital/entrepreneurs/
-   - Notify
-   + Newsletter
+   - Newsletter
+   + Subscribe
+  PAGINA MODIFICATA: https://www.gorillatech.capital/contact/
+   - Newsletter
+   + Updates
