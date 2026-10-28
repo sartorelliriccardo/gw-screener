@@ -17,6 +17,7 @@ OUT = Path(__file__).resolve().parent / "rendered"
 STATS = Path(__file__).resolve().parent / "render_stats.json"   # quanti link aveva l'ultima versione completa di ogni pagina
 MIN_RATIO = 0.8
 ATTEMPTS = 3
+DATA_CALLS = ("SecData", "ShowData", "LibraryFeed", "CalFeed")
 
 
 def main() -> int:
@@ -41,6 +42,7 @@ def main() -> int:
             for attempt in range(ATTEMPTS):
                 try:
                     page = ctx.new_page()
+                    mark = len(diag)
                     page.on("response", lambda resp: resp.status >= 400 and diag.append(f"  HTTP {resp.status} {resp.url[:140]}"))
                     page.on("requestfailed", lambda rq: diag.append(f"  FALLITA {rq.url[:140]} {rq.failure}"))
                     page.goto(url, wait_until="networkidle", timeout=90000)
@@ -51,9 +53,10 @@ def main() -> int:
                     diag.append(f"tentativo {attempt + 1}: {n} link")
                     if n > best_n:
                         best, best_n = html, n
-                    if n >= MIN_RATIO * stats.get(url, 0):
+                    data_failed = any(k in d for d in diag[mark:] for k in DATA_CALLS)   # la richiesta che riempie l'elenco e' fallita
+                    if n >= MIN_RATIO * stats.get(url, 0) and not data_failed:
                         break
-                    print(f"pagina incompleta ({n} link, prima {stats[url]}), riprovo: {url}", flush=True)
+                    print(f"pagina incompleta ({n} link, prima {stats.get(url, 0)}, richiesta dati fallita: {data_failed}), riprovo: {url}", flush=True)
                 except Exception as e:  # noqa: BLE001
                     print("errore", url, e, flush=True)
                 time.sleep(5)
