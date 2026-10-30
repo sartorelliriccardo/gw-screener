@@ -4,6 +4,8 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+import cadence
+
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "docs" / "index.html"
 MAX_EVENTS = 150
@@ -138,6 +140,12 @@ SAMPLE = {
 
 def main():
     st = json.loads((HERE / "state.json").read_text(encoding="utf-8-sig"))
+    try:
+        pr_items, _ = cadence.update()
+        cad_html = cadence.render_html(pr_items)
+    except Exception as ex:  # noqa: BLE001   la cadenza e' un extra: se fallisce la pagina esce lo stesso
+        print("cadenza non disponibile:", ex)
+        cad_html = ""
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     hist = load_history()
     sources = [n for n in st["sources"] if n != "EDGAR"]
@@ -205,11 +213,20 @@ h1{{margin:0;font-size:26px}} h2{{margin:30px 0 10px;font-size:18px}}
 details{{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 14px;margin:8px 0}}
 summary{{cursor:pointer;font-weight:600}} table{{width:100%;border-collapse:collapse;margin-top:8px}}
 td{{padding:5px 6px;border-top:1px solid var(--line);vertical-align:top;word-break:break-word}} a{{color:var(--acc)}}
+.cad{{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px}}
+.cad ul{{margin:8px 0;padding-left:20px}} .cad li{{margin:5px 0}}
+.cadh{{padding:7px 10px;border-radius:8px;border:1px solid var(--line)}}
+.cadh.ok{{background:var(--addbg);color:var(--addfg)}} .cadh.warn{{background:#fff4d6;color:#7a4b00}} .cadh.bad{{background:var(--rembg);color:var(--remfg)}}
+.st th{{text-align:left;font-size:12px;color:var(--mut);padding:4px 6px}} .st td{{white-space:nowrap}} .st td:first-child{{white-space:normal}}
+.gbars{{margin-top:8px}} .gb{{display:flex;align-items:center;gap:8px;margin:3px 0;font-size:12.5px}}
+.gd{{width:78px;flex:none;color:var(--mut)}} .gbar{{background:var(--acc);color:#fff;border-radius:4px;padding:1px 6px;min-width:34px;white-space:nowrap}}
+.gbar.now{{background:var(--bad)}}
 </style></head><body><main>
 <h1>Gorilla Watch</h1>
 <p class="muted">Controllo automatico di Gorilla Technology, Gorilla Tech Capital e Investor Relations, ogni 30 minuti circa.
 Ultimo controllo: <strong>{fmt_ts(last_all)}</strong> · pagina generata: {now}. Segnala solo modifiche vere ai contenuti.</p>
 <div class="cards">{''.join(cards)}</div>
+{cad_html}
 <h2>Modifiche rilevate</h2>
 <div class="filters">{filters}</div>
 <div id="feed">{feed}</div>

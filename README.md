@@ -32,3 +32,10 @@ Per controllare anche i nuovi documenti SEC: Settings -> Secrets and variables -
 - GitHub può ritardare le esecuzioni programmate di qualche minuto.
 - Dopo 60 giorni senza attività GitHub può sospendere i workflow programmati: se non compaiono più commit
   "controllo ...", riattivali dalla tab Actions.
+
+## Cadenza dei comunicati
+
+La pagina mostra la distanza (in giorni) tra un comunicato stampa e il successivo, la mediana, la media e il 75º percentile degli ultimi 12 e 6 mesi,
+da quanti giorni non esce un comunicato, e il prossimo appuntamento fisso (risultati trimestrali, in base alle date dell'anno prima).
+Lo storico parte da `pr_seed.txt` (163 comunicati dal 2022, letti dall'elenco IR) e si aggiorna da solo in `pr_history.json`.
+È una statistica sul passato: non prevede il futuro e non è un consiglio.
