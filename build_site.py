@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import cadence
+import timeline
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "docs" / "index.html"
@@ -146,6 +147,10 @@ def main():
     except Exception as ex:  # noqa: BLE001   la cadenza e' un extra: se fallisce la pagina esce lo stesso
         print("cadenza non disponibile:", ex)
         cad_html = ""
+    try:
+        timeline.build()
+    except Exception as ex:  # noqa: BLE001
+        print("cronologia non disponibile:", ex)
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     hist = load_history()
     sources = [n for n in st["sources"] if n != "EDGAR"]
@@ -225,6 +230,7 @@ td{{padding:5px 6px;border-top:1px solid var(--line);vertical-align:top;word-bre
 <h1>Gorilla Watch</h1>
 <p class="muted">Controllo automatico di Gorilla Technology, Gorilla Tech Capital e Investor Relations, ogni 30 minuti circa.
 Ultimo controllo: <strong>{fmt_ts(last_all)}</strong> · pagina generata: {now}. Segnala solo modifiche vere ai contenuti.</p>
+<p><a class="btn" href="timeline.html">Cronologia dei comunicati e diluizioni →</a></p>
 <div class="cards">{''.join(cards)}</div>
 {cad_html}
 <h2>Modifiche rilevate</h2>

@@ -199,6 +199,85 @@ def render_html(items=None, today=None):
 <p class="small">Come si legge: è una statistica sui comunicati passati ({r['n_total']} dal 2022). Dice quanto spesso Gorilla ha pubblicato,
 non che ne uscirà uno. Spesso i comunicati arrivano insieme ad altri eventi (risultati, emissioni di titoli), che nella cadenza non si vedono.
 Non è un segnale operativo né consulenza finanziaria.</p>
+</div>""" + render_raises(items, today)
+
+
+# ----------------------------- COMUNICATI E RACCOLTE DI CAPITALE -----------------------------
+RX_RAISE = re.compile(r"offering|pricing of", re.I)
+RX_AMOUNT = re.compile(r"\$(\d+(?:\.\d+)?) ?(Million|Billion)", re.I)
+AFTER_RESULTS_DAYS = 21
+
+
+def raise_label(t):
+    tl = t.lower()
+    m = RX_AMOUNT.search(t)
+    amt = f"${m.group(1)}{'M' if m.group(2).lower() == 'million' else 'B'}" if m else "?"
+    what = ("obbligazione convertibile" if "convertible bond" in tl or "convertible notes" in tl or "senior" in tl else
+            "azioni privilegiate convertibili" if "preferred" in tl else "offerta diretta di azioni")
+    return f"{amt} · {what}"
+
+
+def raises_info(items, today):
+    days = sorted({date.fromisoformat(x["d"]) for x in items})
+    res = sorted({date.fromisoformat(x["d"]) for x in items if kind(x["t"]) == "risultati"})
+    rs = sorted({(x["d"], x["t"]) for x in items if RX_RAISE.search(x["t"]) and "closing" not in x["t"].lower()})
+    rows = []
+    for d, t in rs:
+        r = date.fromisoformat(d)
+        lr = max((x for x in res if x <= r), default=None)
+        prev = max((x for x in days if x < r), default=None)
+        rows.append({"d": r, "what": raise_label(t), "after_res": (r - lr).days if lr else None,
+                     "since_pr": (r - prev).days if prev else None,
+                     "n21": sum(1 for x in days if 0 < (r - x).days <= 21)})
+    return {"rows": rows, "res": res, "days": days}
+
+
+def render_raises(items=None, today=None):
+    items = items if items is not None else load()
+    today = today or datetime.now(timezone.utc).date()
+    info = raises_info(items, today)
+    rows, res, days = info["rows"], info["res"], info["days"]
+    if len(rows) < 3 or len(res) < 3:
+        return ""
+    near = [r for r in rows if r["after_res"] is not None and r["after_res"] <= AFTER_RESULTS_DAYS]
+    span = (today - res[0]).days
+    base = min(1.0, len(res) * AFTER_RESULTS_DAYS / span)
+    avg21 = statistics.mean(sum(1 for x in days if 0 < (t - x).days <= 21) for t in days if t >= date(2025, 1, 1))
+    n21 = [r["n21"] for r in rows]
+    long_wait = max(r["since_pr"] for r in rows)
+    last_raise = rows[-1]["d"]
+    last_res = max((x for x in res if x <= today), default=None)
+    nr = next_results(items, today)
+    offs = [r["after_res"] for r in near]
+    table = "".join(
+        f"<tr><td>{fmt(r['d'])}</td><td>{e(r['what'])}</td><td>{r['after_res'] if r['after_res'] is not None else '-'}</td>"
+        f"<td>{r['since_pr']}</td><td>{r['n21']}</td></tr>" for r in rows[::-1])
+    out = [f"<li><strong>Dopo i risultati.</strong> {len(near)} raccolte su {len(rows)} sono arrivate entro {AFTER_RESULTS_DAYS} giorni da un comunicato sui risultati "
+           f"(dopo {min(offs)}-{max(offs)} giorni). Se le raccolte fossero cadute a caso, ci sarebbe finito circa il {base * 100:.0f}% di esse.</li>",
+           f"<li><strong>Mai dopo un silenzio.</strong> Ogni raccolta è arrivata al massimo {long_wait} giorni dopo l'ultimo comunicato: la società era attiva, "
+           f"non ferma. (Attenzione: con un comunicato ogni 6 giorni circa, questo da solo dice poco.)</li>",
+           f"<li><strong>Nessun picco generale prima.</strong> Nei 21 giorni precedenti le raccolte ci sono stati {min(n21)}-{max(n21)} comunicati, "
+           f"contro una media di {avg21:.1f} in un periodo qualsiasi. Non c'è una raffica sistematica prima dell'operazione, tranne in un caso (giugno 2026).</li>"]
+    now_rows = [f"<li>Ultima raccolta: <strong>{fmt(last_raise)}</strong> ({(today - last_raise).days} giorni fa). "
+                f"Ultimi risultati: {fmt(last_res)} ({(today - last_res).days} giorni fa). Ultimo comunicato: {(today - days[-1]).days} giorni fa.</li>"]
+    if nr and offs:
+        lo, hi = nr["expected"] + timedelta(days=min(offs)), nr["expected"] + timedelta(days=max(offs))
+        now_rows.append(f"<li><strong>Finestra storica:</strong> se i risultati escono intorno al {fmt(nr['expected'])}, le raccolte passate cadrebbero "
+                        f"tra il <strong>{fmt(lo)}</strong> e il <strong>{fmt(hi)}</strong>. È una proiezione dello schema, con pochi casi.</li>")
+    elif last_res and (today - last_res).days <= AFTER_RESULTS_DAYS and last_raise < last_res:
+        now_rows.append("<li><strong>Siamo dentro la finestra storica</strong> (meno di 21 giorni dai risultati, nessuna raccolta dopo).</li>")
+    return f"""<h2>Comunicati e raccolte di capitale</h2>
+<div class="cad">
+<table class="st"><tr><th>Data</th><th>Operazione (dal comunicato)</th><th>giorni dopo i risultati</th><th>giorni dall'ultimo comunicato</th><th>comunicati nei 21 giorni prima</th></tr>{table}</table>
+<ul>{''.join(out)}</ul>
+<div class="lbl">Dove siamo ora</div>
+<ul>{''.join(now_rows)}
+<li><strong>Quadro dalla nostra ricerca del 20/10 (stime, da verificare):</strong> la registrazione F-3 per emettere azioni sarebbe scaduta il 29/08/2026, quindi per ora restano
+strade private (PIPE, debito, partner); cassa stimata circa $225M contro un fabbisogno di $760-810M fino a marzo 2027; liquidità a rischio da metà dicembre in scenario di stress.
+Dalla stessa ricerca: avviso sulla cedola circa 13-15/11, blocco sulla serie B che scade circa 19/11, finestra possibile 20/11-10/12.</li></ul>
+<p class="small"><strong>Lettura, non un fatto:</strong> lo schema suggerisce che una nuova raccolta è più probabile nelle 1-3 settimane dopo i prossimi risultati che adesso, in un periodo di silenzio.
+Gli indizi da controllare nei documenti ufficiali sono: nuova F-3 su EDGAR, 6-K con termini di un finanziamento, avviso sulla cedola, Form D. Sono 6 casi: non è una regola.
+Non è consulenza finanziaria.</p>
 </div>"""
 
 
