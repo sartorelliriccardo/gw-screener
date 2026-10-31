@@ -2896,7 +2896,7 @@
    "pages": {
     "https://investors.gorilla-technology.com/press-releases/": {
      "lastmod": "",
-     "checked": 1793453229.513241,
+     "checked": 1793456111.8337703,
      "etag": null,
      "lm": null,
      "hash": "aae6b6f634981d88bd0d23151752898bd8c2da10",
@@ -2904,7 +2904,7 @@
     },
     "https://investors.gorilla-technology.com/events-presentations/": {
      "lastmod": "",
-     "checked": 1793453229.513241,
+     "checked": 1793456111.8337703,
      "etag": null,
      "lm": null,
      "hash": "753caba692e74a73d23a6b3b1fae69dfa76b6d58",
@@ -2912,7 +2912,7 @@
     },
     "https://investors.gorilla-technology.com/quarterly-results/": {
      "lastmod": "",
-     "checked": 1793453229.513241,
+     "checked": 1793456111.8337703,
      "etag": null,
      "lm": null,
      "hash": "104eb60bba4f9fcc7c94595726f513461a9a981b",
@@ -2920,12 +2920,12 @@
     },
     "https://investors.gorilla-technology.com/annual-reports/": {
      "lastmod": "",
-     "checked": 1793432229.513241,
+     "checked": 1793435111.8337703,
      "etag": null,
      "lm": null,
      "hash": "04866d218e745fec5e649e30d19707600373e8ff",
      "title": "Annual Reports - Gorilla Technology",
-     "pending": 64
+     "pending": 65
     }
    },
    "ready": true,
