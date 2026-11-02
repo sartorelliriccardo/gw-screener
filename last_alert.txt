@@ -1,34 +1,8 @@
-2026-11-02 20:21:34
+2026-11-02 21:23:08
 [Gorilla IR]
-  NUOVO FILE: https://d2ghdaxqb194v2.cloudfront.net/2980/201933.pdf
-   Investor Presentation (3443 KB, 26 pagine)
-   trovato su https://investors.gorilla-technology.com/events-presentations/
-   INVESTOR
-   PRESENTATION
-   Gorilla Technology Group, Inc.
-  PAGINA MODIFICATA: https://investors.gorilla-technology.com/events-presentations/
-   + There are currently no events to display.
-   + Investor Presentation
-   + October 22, 2026 October 23, 2026
-   + Edge AI Taipei 2026
-   + Location: Taipei, Taiwan
-   + Add to Outlook
-   + Add to Google
-   + Event Link
-   + … altre 45 righe aggiunte
-   link aggiunti: https://continentalstock.com/, https://d2ghdaxqb194v2.cloudfront.net/2980/201933.pdf#sha=DDB67B805C62B73A, https://event.webcasts.com/starthere.jsp?ei=1762358&tp_key=51247244e9, https://investors.gorilla-technology.com/events-presentations/=AddToLink2=, https://taipei2026.edgeaifoundation.org/ (+6)
+  PAGINA MODIFICATA: https://investors.gorilla-technology.com/quarterly-results/
+   link tolti: https://continentalstock.com/
    menu/piè di pagina cambiati (351 caratteri)
   PAGINA MODIFICATA: https://investors.gorilla-technology.com/annual-reports/
-   + Apr 15, 2026 PDF
-   + Annual and transition report of foreign private issuers
-   + Apr 30, 2025 PDF
-   + Annual and transition report of foreign private issuers
-   + May 15, 2024 PDF
-   + Annual and transition report of foreign private issuers
-   + Apr 28, 2023 PDF
-   + Annual and transition report of foreign private issuers
-   link aggiunti: https://continentalstock.com/, https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-23-033461.htm, https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-23-033461.pdf, https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-24-043724.htm, https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-24-043724.pdf (+4)
-   menu/piè di pagina cambiati (351 caratteri)
-  PAGINA MODIFICATA: https://investors.gorilla-technology.com/quarterly-results/
-   link aggiunti: https://continentalstock.com/
+   link tolti: https://continentalstock.com/
    menu/piè di pagina cambiati (351 caratteri)

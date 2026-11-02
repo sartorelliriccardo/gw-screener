@@ -477,5 +477,53 @@
    "links_removed": [],
    "chrome": 351
   }
+ },
+ {
+  "ts": "2026-11-02T21:23:08+00:00",
+  "source": "Gorilla IR",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://investors.gorilla-technology.com/quarterly-results/",
+  "text": [
+   "link tolti: https://continentalstock.com/",
+   "menu/piè di pagina cambiati (351 caratteri)"
+  ],
+  "detail": {
+   "page_title": "Quarterly Results - Gorilla Technology",
+   "title": null,
+   "desc": null,
+   "removed": [],
+   "n_removed": 0,
+   "added": [],
+   "n_added": 0,
+   "links_added": [],
+   "links_removed": [
+    "https://continentalstock.com/"
+   ],
+   "chrome": 351
+  }
+ },
+ {
+  "ts": "2026-11-02T21:23:08+00:00",
+  "source": "Gorilla IR",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://investors.gorilla-technology.com/annual-reports/",
+  "text": [
+   "link tolti: https://continentalstock.com/",
+   "menu/piè di pagina cambiati (351 caratteri)"
+  ],
+  "detail": {
+   "page_title": "Annual Reports - Gorilla Technology",
+   "title": null,
+   "desc": null,
+   "removed": [],
+   "n_removed": 0,
+   "added": [],
+   "n_added": 0,
+   "links_added": [],
+   "links_removed": [
+    "https://continentalstock.com/"
+   ],
+   "chrome": 351
+  }
  }
 ]
