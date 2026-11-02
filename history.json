@@ -321,5 +321,161 @@
    "links_removed": [],
    "chrome": 777
   }
+ },
+ {
+  "ts": "2026-11-02T20:21:34+00:00",
+  "source": "Gorilla IR",
+  "type": "NUOVO FILE",
+  "url": "https://d2ghdaxqb194v2.cloudfront.net/2980/201933.pdf",
+  "text": [
+   "Investor Presentation (3443 KB, 26 pagine)",
+   "trovato su https://investors.gorilla-technology.com/events-presentations/",
+   "INVESTOR",
+   "PRESENTATION",
+   "Gorilla Technology Group, Inc."
+  ],
+  "detail": {
+   "page_title": "Investor Presentation",
+   "file": {
+    "kind": "new",
+    "size": 3526394,
+    "pages": 26,
+    "sha": "d6e14dad3b11",
+    "head": [
+     "INVESTOR",
+     "PRESENTATION",
+     "Gorilla Technology Group, Inc.",
+     "(NASDAQ : GRRR)",
+     "October 2026",
+     "Disclaimers"
+    ],
+    "page": "https://investors.gorilla-technology.com/events-presentations/"
+   }
+  }
+ },
+ {
+  "ts": "2026-11-02T20:21:34+00:00",
+  "source": "Gorilla IR",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://investors.gorilla-technology.com/events-presentations/",
+  "text": [
+   "+ There are currently no events to display.",
+   "+ Investor Presentation",
+   "+ October 22, 2026 October 23, 2026",
+   "+ Edge AI Taipei 2026",
+   "+ Location: Taipei, Taiwan",
+   "+ Add to Outlook",
+   "+ Add to Google",
+   "+ Event Link",
+   "+ … altre 45 righe aggiunte",
+   "link aggiunti: https://continentalstock.com/, https://d2ghdaxqb194v2.cloudfront.net/2980/201933.pdf#sha=DDB67B805C62B73A, https://event.webcasts.com/starthere.jsp?ei=1762358&tp_key=51247244e9, https://investors.gorilla-technology.com/events-presentations/=AddToLink2=, https://taipei2026.edgeaifoundation.org/ (+6)",
+   "menu/piè di pagina cambiati (351 caratteri)"
+  ],
+  "detail": {
+   "page_title": "Events & Presentations - Gorilla Technology",
+   "title": null,
+   "desc": null,
+   "removed": [],
+   "n_removed": 0,
+   "added": [
+    "There are currently no events to display.",
+    "Investor Presentation",
+    "October 22, 2026 October 23, 2026",
+    "Edge AI Taipei 2026",
+    "Location: Taipei, Taiwan",
+    "Add to Outlook",
+    "Add to Google",
+    "Event Link"
+   ],
+   "n_added": 53,
+   "links_added": [
+    "https://continentalstock.com/",
+    "https://d2ghdaxqb194v2.cloudfront.net/2980/201933.pdf#sha=DDB67B805C62B73A",
+    "https://event.webcasts.com/starthere.jsp?ei=1762358&tp_key=51247244e9",
+    "https://investors.gorilla-technology.com/events-presentations/=AddToLink2=",
+    "https://taipei2026.edgeaifoundation.org/",
+    "https://www.computextaipei.com.tw/en/index.html",
+    "https://www.gowebcasting.com/events/gorilla-technology-group/2026/03/02/fiscal-year-2025-financial-results/play",
+    "https://www.gowebcasting.com/events/gorilla-technology-group/2026/05/27/q1-2026-financial-results/play",
+    "https://www.gowebcasting.com/events/gorilla-technology-group/2026/08/24/q2-and-half-year-2026-financial-results/play",
+    "https://www.mwcbarcelona.com/",
+    "https://www.redchip.com/webinar/GRRR/83305104264"
+   ],
+   "links_removed": [],
+   "chrome": 351
+  }
+ },
+ {
+  "ts": "2026-11-02T20:21:34+00:00",
+  "source": "Gorilla IR",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://investors.gorilla-technology.com/annual-reports/",
+  "text": [
+   "+ Apr 15, 2026 PDF",
+   "+ Annual and transition report of foreign private issuers",
+   "+ Apr 30, 2025 PDF",
+   "+ Annual and transition report of foreign private issuers",
+   "+ May 15, 2024 PDF",
+   "+ Annual and transition report of foreign private issuers",
+   "+ Apr 28, 2023 PDF",
+   "+ Annual and transition report of foreign private issuers",
+   "link aggiunti: https://continentalstock.com/, https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-23-033461.htm, https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-23-033461.pdf, https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-24-043724.htm, https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-24-043724.pdf (+4)",
+   "menu/piè di pagina cambiati (351 caratteri)"
+  ],
+  "detail": {
+   "page_title": "Annual Reports - Gorilla Technology",
+   "title": null,
+   "desc": null,
+   "removed": [],
+   "n_removed": 0,
+   "added": [
+    "Apr 15, 2026 PDF",
+    "Annual and transition report of foreign private issuers",
+    "Apr 30, 2025 PDF",
+    "Annual and transition report of foreign private issuers",
+    "May 15, 2024 PDF",
+    "Annual and transition report of foreign private issuers",
+    "Apr 28, 2023 PDF",
+    "Annual and transition report of foreign private issuers"
+   ],
+   "n_added": 8,
+   "links_added": [
+    "https://continentalstock.com/",
+    "https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-23-033461.htm",
+    "https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-23-033461.pdf",
+    "https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-24-043724.htm",
+    "https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-24-043724.pdf",
+    "https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-25-037703.htm",
+    "https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-25-037703.pdf",
+    "https://s3.amazonaws.com/sec.irpass.cc/2980/0001437749-26-012385.htm",
+    "https://s3.amazonaws.com/sec.irpass.cc/2980/0001437749-26-012385.pdf"
+   ],
+   "links_removed": [],
+   "chrome": 351
+  }
+ },
+ {
+  "ts": "2026-11-02T20:21:34+00:00",
+  "source": "Gorilla IR",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://investors.gorilla-technology.com/quarterly-results/",
+  "text": [
+   "link aggiunti: https://continentalstock.com/",
+   "menu/piè di pagina cambiati (351 caratteri)"
+  ],
+  "detail": {
+   "page_title": "Quarterly Results - Gorilla Technology",
+   "title": null,
+   "desc": null,
+   "removed": [],
+   "n_removed": 0,
+   "added": [],
+   "n_added": 0,
+   "links_added": [
+    "https://continentalstock.com/"
+   ],
+   "links_removed": [],
+   "chrome": 351
+  }
  }
 ]

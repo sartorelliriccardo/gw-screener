@@ -1,14 +1,67 @@
 # Gorilla Watch
 
-Ultimo aggiornamento: **2026-11-02 19:30 UTC**
+Ultimo aggiornamento: **2026-11-02 20:21 UTC**
 
 | Sito | Pagine | Ultimo controllo | Stato |
 |---|---|---|---|
 | Gorilla Technology | 248 | 2026-11-02 16:37 UTC | ok |
 | Gorilla Tech Capital | 112 | 2026-11-02 15:30 UTC | ok |
-| Gorilla IR | 4 | 2026-11-02 19:30 UTC | ok |
+| Gorilla IR | 4 | 2026-11-02 20:21 UTC | ok |
 
 ## Ultime modifiche rilevate
+
+### [Quarterly Results - Gorilla Technology](https://investors.gorilla-technology.com/quarterly-results/)
+2026-11-02 20:21 UTC · Gorilla IR · pagina modificata
+
+- link aggiunto: https://continentalstock.com/
+
+### [Annual Reports - Gorilla Technology](https://investors.gorilla-technology.com/annual-reports/)
+2026-11-02 20:21 UTC · Gorilla IR · pagina modificata
+
+- **Apr 15, 2026 PDF**
+- **Annual and transition report of foreign private issuers**
+- **Apr 30, 2025 PDF**
+- **Annual and transition report of foreign private issuers**
+- **May 15, 2024 PDF**
+- **Annual and transition report of foreign private issuers**
+- **Apr 28, 2023 PDF**
+- **Annual and transition report of foreign private issuers**
+- link aggiunto: https://continentalstock.com/
+- link aggiunto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-23-033461.htm
+- link aggiunto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-23-033461.pdf
+- link aggiunto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-24-043724.htm
+- link aggiunto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-24-043724.pdf
+- link aggiunto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-25-037703.htm
+- link aggiunto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-25-037703.pdf
+- link aggiunto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001437749-26-012385.htm
+- link aggiunto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001437749-26-012385.pdf
+
+### [Events & Presentations - Gorilla Technology](https://investors.gorilla-technology.com/events-presentations/)
+2026-11-02 20:21 UTC · Gorilla IR · pagina modificata
+
+- **There are currently no events to display.**
+- **Investor Presentation**
+- **October 22, 2026 October 23, 2026**
+- **Edge AI Taipei 2026**
+- **Location: Taipei, Taiwan**
+- **Add to Outlook**
+- **Add to Google**
+- **Event Link**
+- link aggiunto: https://continentalstock.com/
+- link aggiunto: https://d2ghdaxqb194v2.cloudfront.net/2980/201933.pdf#sha=DDB67B805C62B73A
+- link aggiunto: https://event.webcasts.com/starthere.jsp?ei=1762358&tp_key=51247244e9
+- link aggiunto: https://investors.gorilla-technology.com/events-presentations/=AddToLink2=
+- link aggiunto: https://taipei2026.edgeaifoundation.org/
+- link aggiunto: https://www.computextaipei.com.tw/en/index.html
+- link aggiunto: https://www.gowebcasting.com/events/gorilla-technology-group/2026/03/02/fiscal-year-2025-financial-results/play
+- link aggiunto: https://www.gowebcasting.com/events/gorilla-technology-group/2026/05/27/q1-2026-financial-results/play
+- link aggiunto: https://www.gowebcasting.com/events/gorilla-technology-group/2026/08/24/q2-and-half-year-2026-financial-results/play
+- link aggiunto: https://www.mwcbarcelona.com/
+- link aggiunto: https://www.redchip.com/webinar/GRRR/83305104264
+
+### [Investor Presentation](https://d2ghdaxqb194v2.cloudfront.net/2980/201933.pdf)
+2026-11-02 20:21 UTC · Gorilla IR · nuovo file
+
 
 ### [Annual Reports - Gorilla Technology](https://investors.gorilla-technology.com/annual-reports/)
 2026-11-02 01:51 UTC · Gorilla IR · pagina modificata

@@ -2896,7 +2896,7 @@
    "pages": {
     "https://investors.gorilla-technology.com/press-releases/": {
      "lastmod": "",
-     "checked": 1793647845.9154763,
+     "checked": 1793650876.6238909,
      "etag": null,
      "lm": null,
      "hash": "aae6b6f634981d88bd0d23151752898bd8c2da10",
@@ -2904,15 +2904,15 @@
     },
     "https://investors.gorilla-technology.com/events-presentations/": {
      "lastmod": "",
-     "checked": 1793647845.9154763,
+     "checked": 1793650876.6238909,
      "etag": null,
      "lm": null,
-     "hash": "753caba692e74a73d23a6b3b1fae69dfa76b6d58",
+     "hash": "7c31793b03b673eba0178e6691707a4909203c54",
      "title": "Events & Presentations - Gorilla Technology"
     },
     "https://investors.gorilla-technology.com/quarterly-results/": {
      "lastmod": "",
-     "checked": 1793647845.9154763,
+     "checked": 1793650876.6238909,
      "etag": null,
      "lm": null,
      "hash": "104eb60bba4f9fcc7c94595726f513461a9a981b",
@@ -2920,10 +2920,10 @@
     },
     "https://investors.gorilla-technology.com/annual-reports/": {
      "lastmod": "",
-     "checked": 1793647845.9154763,
+     "checked": 1793650876.6238909,
      "etag": null,
      "lm": null,
-     "hash": "ae85c07c1c6e3687dfef3bd75f342f34f327e26b",
+     "hash": "04866d218e745fec5e649e30d19707600373e8ff",
      "title": "Annual Reports - Gorilla Technology"
     }
    },
@@ -3096,6 +3096,14 @@
      "pages": 169,
      "label": "PDF",
      "page": "https://investors.gorilla-technology.com/annual-reports/"
+    },
+    "https://d2ghdaxqb194v2.cloudfront.net/2980/201933.pdf": {
+     "h": "DDB67B805C62B73A5CBA9A63F6403D4EE8CF704A3FC313A04B753F6B2058AC2E",
+     "sha": "d6e14dad3b11deaa98aef050cd3a7e18e29c86828672b7d06001afbc4d03caeb",
+     "size": 3526394,
+     "pages": 26,
+     "label": "Investor Presentation",
+     "page": "https://investors.gorilla-technology.com/events-presentations/"
     }
    },
    "count": 4
