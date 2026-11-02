@@ -252,5 +252,74 @@
    ],
    "chrome": 777
   }
+ },
+ {
+  "ts": "2026-11-02T01:51:50+00:00",
+  "source": "Gorilla IR",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://investors.gorilla-technology.com/annual-reports/",
+  "text": [
+   "titolo: «» -> «Annual Reports - Gorilla Technology»",
+   "- Gateway Timeout",
+   "+ Annual Reports",
+   "+ ANNUAL REPORTS",
+   "+ Years of Innovation",
+   "+ Comprehensive Annual Reviews",
+   "+ Gorilla Technology",
+   "link aggiunti: https://insights.gorilla-technology.com/, https://investors.gorilla-technology.com/, https://investors.gorilla-technology.com/analyst-coverage, https://investors.gorilla-technology.com/annual-reports, https://investors.gorilla-technology.com/contact-ir (+23)",
+   "menu/piè di pagina cambiati (777 caratteri)"
+  ],
+  "detail": {
+   "page_title": "Annual Reports - Gorilla Technology",
+   "title": [
+    "",
+    "Annual Reports - Gorilla Technology"
+   ],
+   "desc": null,
+   "removed": [
+    "Gateway Timeout"
+   ],
+   "n_removed": 1,
+   "added": [
+    "Annual Reports",
+    "ANNUAL REPORTS",
+    "Years of Innovation",
+    "Comprehensive Annual Reviews",
+    "Gorilla Technology"
+   ],
+   "n_added": 5,
+   "links_added": [
+    "https://insights.gorilla-technology.com/",
+    "https://investors.gorilla-technology.com/",
+    "https://investors.gorilla-technology.com/analyst-coverage",
+    "https://investors.gorilla-technology.com/annual-reports",
+    "https://investors.gorilla-technology.com/contact-ir",
+    "https://investors.gorilla-technology.com/corporate-governance",
+    "https://investors.gorilla-technology.com/email-alerts",
+    "https://investors.gorilla-technology.com/events-presentations",
+    "https://investors.gorilla-technology.com/faqs",
+    "https://investors.gorilla-technology.com/press-releases",
+    "https://investors.gorilla-technology.com/quarterly-results",
+    "https://investors.gorilla-technology.com/sec-filings",
+    "https://investors.gorilla-technology.com/stock-information",
+    "https://investors.gorilla-technology.com/videos",
+    "https://www.facebook.com/GorillaTechnology",
+    "https://www.gorilla-technology.com",
+    "https://www.gorilla-technology.com/about-us",
+    "https://www.gorilla-technology.com/about-us/careers",
+    "https://www.gorilla-technology.com/about-us/corporate-social-responsibility",
+    "https://www.gorilla-technology.com/about-us/global-footprint",
+    "https://www.gorilla-technology.com/about-us/leadership",
+    "https://www.gorilla-technology.com/about-us/partners",
+    "https://www.gorilla-technology.com/about-us/privacy-policy",
+    "https://www.gorilla-technology.com/about-us/terms-of-service",
+    "https://www.gorilla-technology.com/customer-success",
+    "https://www.gorilla-technology.com/whitepapers",
+    "https://www.linkedin.com/company/gorilla-technology-group",
+    "https://x.com/GorillaTechGrp"
+   ],
+   "links_removed": [],
+   "chrome": 777
+  }
  }
 ]
