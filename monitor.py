@@ -83,6 +83,10 @@ BLOCK_TAGS = {"p", "div", "br", "li", "ul", "ol", "tr", "td", "th", "h1", "h2", 
               "section", "article", "main", "header", "footer", "nav", "form", "table", "blockquote", "figure"}
 CHROME_TAGS = {"header", "nav", "footer"}
 IGNORE_RX = [re.compile(p, re.I) for p in IGNORE_LINE_PATTERNS]
+# link del piede di pagina IR (transfer agent) che il widget carica a intermittenza: comparsa/scomparsa non e' una modifica
+IGNORE_LINK_SUBSTR = ["continentalstock.com"]
+# pagine di errore del server catturate dal browser al posto della pagina vera
+ERROR_PAGE_RX = re.compile(r"^(gateway time-?out|bad gateway|service unavailable|502|503|504)\b", re.I)
 DONEW_RX = re.compile(r"DoNew\('([^']+)'\s*,\s*'([0-9A-Fa-f]+)'")
 DOCEXT_RX = re.compile(r"\.(pdf|pptx?|xlsx?)$", re.I)
 SKIP_URL_PATTERNS = ["cookie-policy"]   # pagine che cambiano da sole (elenco cookie con codici casuali)
@@ -324,8 +328,10 @@ def describe_change(url, old, new):
             out.append("   + " + short(ln))
         if len(add) > MAX_DIFF_LINES:
             out.append(f"   + … altre {len(add) - MAX_DIFF_LINES} righe aggiunte")
-    ol = {x for x in old["links"] if "blackhole=" not in x}   # trappola anti-bot con codice che cambia a ogni visita
-    nl = {x for x in new["links"] if "blackhole=" not in x}
+    def _ok(x):   # "blackhole=" = trappola anti-bot con codice che cambia a ogni visita
+        return "blackhole=" not in x and not any(w in x for w in IGNORE_LINK_SUBSTR)
+    ol = {x for x in old["links"] if _ok(x)}
+    nl = {x for x in new["links"] if _ok(x)}
     la, lr = sorted(nl - ol), sorted(ol - nl)
     if la:
         out.append("   link aggiunti: " + ", ".join(short(x, 80) for x in la[:5]) + (f" (+{len(la) - 5})" if len(la) > 5 else ""))
@@ -491,6 +497,10 @@ def check_source(src, st, now):
             meta["lastmod"] = lm
             continue
         new = parse_html(u, raw)
+        if src.get("rendered_dir") and meta and (not new["title"] or any(ERROR_PAGE_RX.match(x) for x in new["lines"][:5])):
+            log(f"[{name}] il browser ha preso una pagina di errore, ignoro e riprovo al prossimo giro: {u}")
+            meta["checked"] = now - FULL_CHECK_EVERY_HOURS * 3600 + 600
+            continue
         new["fetched"] = datetime.now().isoformat(timespec="seconds")
         old = load_snap(u) if meta else None
         if (src.get("rendered_dir") and old and len(old["lines"]) >= 6
