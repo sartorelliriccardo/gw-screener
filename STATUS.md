@@ -1,14 +1,34 @@
 # Gorilla Watch
 
-Ultimo aggiornamento: **2026-11-03 05:57 UTC**
+Ultimo aggiornamento: **2026-11-03 07:09 UTC**
 
 | Sito | Pagine | Ultimo controllo | Stato |
 |---|---|---|---|
-| Gorilla Technology | 248 | 2026-11-03 05:56 UTC | ok |
+| Gorilla Technology | 248 | 2026-11-03 07:09 UTC | ok |
 | Gorilla Tech Capital | 112 | 2026-11-03 04:57 UTC | ok |
-| Gorilla IR | 4 | 2026-11-03 05:56 UTC | ok |
+| Gorilla IR | 4 | 2026-11-03 07:09 UTC | ok |
 
 ## Ultime modifiche rilevate
+
+### [Gorilla Technology | Global Footprint](https://www.gorilla-technology.com/about-us/global-footprint/)
+2026-11-03 07:09 UTC · Gorilla Technology · pagina modificata
+
+- ~~Client Impact, Research & Development, and Business Development Center~~
+- ~~Business Development Center~~
+- ~~Client Impact, Research & Development, and Business Development Center~~
+- ~~Client Impact & Business Development Center~~
+- ~~Client Impact & Business Development Center~~
+- ~~London Office - Headquarters~~
+- ~~Client Impact & Business Development Center~~
+- ~~Client Impact, Research & Development, and Global Administration Center~~
+- **R&D, Client Impact & Business Development**
+- **Business Development**
+- **R&D, Client Impact & Business Development**
+- **Business Development**
+- **Client Impact & Business Development**
+- **London Office**
+- **Global HQ, Client Impact & Business Development**
+- **Client Impact, R&D, and Global Admin Center**
 
 ### [Annual Reports - Gorilla Technology](https://investors.gorilla-technology.com/annual-reports/)
 2026-11-02 21:23 UTC · Gorilla IR · pagina modificata

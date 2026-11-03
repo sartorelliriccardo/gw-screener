@@ -1,8 +1,19 @@
-2026-11-02 21:23:08
-[Gorilla IR]
-  PAGINA MODIFICATA: https://investors.gorilla-technology.com/quarterly-results/
-   link tolti: https://continentalstock.com/
-   menu/piè di pagina cambiati (351 caratteri)
-  PAGINA MODIFICATA: https://investors.gorilla-technology.com/annual-reports/
-   link tolti: https://continentalstock.com/
-   menu/piè di pagina cambiati (351 caratteri)
+2026-11-03 07:09:22
+[Gorilla Technology]
+  PAGINA MODIFICATA: https://www.gorilla-technology.com/about-us/global-footprint/
+   - Client Impact, Research & Development, and Business Development Center
+   - Business Development Center
+   - Client Impact, Research & Development, and Business Development Center
+   - Client Impact & Business Development Center
+   - Client Impact & Business Development Center
+   - London Office - Headquarters
+   - Client Impact & Business Development Center
+   - Client Impact, Research & Development, and Global Administration Center
+   + R&D, Client Impact & Business Development
+   + Business Development
+   + R&D, Client Impact & Business Development
+   + Business Development
+   + Client Impact & Business Development
+   + London Office
+   + Global HQ, Client Impact & Business Development
+   + Client Impact, R&D, and Global Admin Center

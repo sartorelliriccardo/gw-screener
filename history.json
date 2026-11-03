@@ -525,5 +525,59 @@
    ],
    "chrome": 351
   }
+ },
+ {
+  "ts": "2026-11-03T07:09:22+00:00",
+  "source": "Gorilla Technology",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://www.gorilla-technology.com/about-us/global-footprint/",
+  "text": [
+   "- Client Impact, Research & Development, and Business Development Center",
+   "- Business Development Center",
+   "- Client Impact, Research & Development, and Business Development Center",
+   "- Client Impact & Business Development Center",
+   "- Client Impact & Business Development Center",
+   "- London Office - Headquarters",
+   "- Client Impact & Business Development Center",
+   "- Client Impact, Research & Development, and Global Administration Center",
+   "+ R&D, Client Impact & Business Development",
+   "+ Business Development",
+   "+ R&D, Client Impact & Business Development",
+   "+ Business Development",
+   "+ Client Impact & Business Development",
+   "+ London Office",
+   "+ Global HQ, Client Impact & Business Development",
+   "+ Client Impact, R&D, and Global Admin Center"
+  ],
+  "detail": {
+   "page_title": "Gorilla Technology | Global Footprint",
+   "title": null,
+   "desc": null,
+   "removed": [
+    "Client Impact, Research & Development, and Business Development Center",
+    "Business Development Center",
+    "Client Impact, Research & Development, and Business Development Center",
+    "Client Impact & Business Development Center",
+    "Client Impact & Business Development Center",
+    "London Office - Headquarters",
+    "Client Impact & Business Development Center",
+    "Client Impact, Research & Development, and Global Administration Center"
+   ],
+   "n_removed": 8,
+   "added": [
+    "R&D, Client Impact & Business Development",
+    "Business Development",
+    "R&D, Client Impact & Business Development",
+    "Business Development",
+    "Client Impact & Business Development",
+    "London Office",
+    "Global HQ, Client Impact & Business Development",
+    "Client Impact, R&D, and Global Admin Center"
+   ],
+   "n_added": 8,
+   "links_added": [],
+   "links_removed": [],
+   "chrome": 0
+  }
  }
 ]
