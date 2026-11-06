@@ -579,5 +579,26 @@
    "links_removed": [],
    "chrome": 0
   }
+ },
+ {
+  "ts": "2026-11-06T16:28:14+00:00",
+  "source": "Gorilla IR",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://investors.gorilla-technology.com/annual-reports/",
+  "text": [
+   "menu/piè di pagina cambiati (351 caratteri)"
+  ],
+  "detail": {
+   "page_title": "Annual Reports - Gorilla Technology",
+   "title": null,
+   "desc": null,
+   "removed": [],
+   "n_removed": 0,
+   "added": [],
+   "n_added": 0,
+   "links_added": [],
+   "links_removed": [],
+   "chrome": 351
+  }
  }
 ]
