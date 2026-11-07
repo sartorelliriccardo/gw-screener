@@ -348,9 +348,9 @@
     },
     "https://www.gorilla-technology.com/about-us/global-footprint/": {
      "lastmod": "2026-11-03T06:55:48+00:00",
-     "checked": 1794066043.2009966,
+     "checked": 1794089666.551838,
      "etag": null,
-     "lm": "Fri, 06 Nov 2026 21:18:10 GMT",
+     "lm": "Sat, 07 Nov 2026 19:20:55 GMT",
      "hash": "3db6c5f319c4cbfd0c1639336a5540a74e1b1311",
      "title": "Gorilla Technology | Global Footprint"
     },
@@ -380,9 +380,9 @@
     },
     "https://www.gorilla-technology.com/about-us/contact/": {
      "lastmod": "2026-11-04T07:44:25+00:00",
-     "checked": 1794066043.2009966,
+     "checked": 1794089666.551838,
      "etag": null,
-     "lm": "Fri, 06 Nov 2026 20:57:35 GMT",
+     "lm": "Sat, 07 Nov 2026 19:14:12 GMT",
      "hash": "5813a17d17c8928d536dee70dac389e8f5a9493e",
      "title": "Gorilla Technology | Contact"
     },
@@ -2896,7 +2896,7 @@
    "pages": {
     "https://investors.gorilla-technology.com/press-releases/": {
      "lastmod": "",
-     "checked": 1794086092.0065773,
+     "checked": 1794089666.551838,
      "etag": null,
      "lm": null,
      "hash": "aae6b6f634981d88bd0d23151752898bd8c2da10",
@@ -2904,7 +2904,7 @@
     },
     "https://investors.gorilla-technology.com/events-presentations/": {
      "lastmod": "",
-     "checked": 1794086092.0065773,
+     "checked": 1794089666.551838,
      "etag": null,
      "lm": null,
      "hash": "753caba692e74a73d23a6b3b1fae69dfa76b6d58",
@@ -2912,7 +2912,7 @@
     },
     "https://investors.gorilla-technology.com/quarterly-results/": {
      "lastmod": "",
-     "checked": 1794086092.0065773,
+     "checked": 1794089666.551838,
      "etag": null,
      "lm": null,
      "hash": "104eb60bba4f9fcc7c94595726f513461a9a981b",
@@ -2920,12 +2920,12 @@
     },
     "https://investors.gorilla-technology.com/annual-reports/": {
      "lastmod": "",
-     "checked": 1794065092.0065773,
+     "checked": 1794068666.551838,
      "etag": null,
      "lm": null,
      "hash": "04866d218e745fec5e649e30d19707600373e8ff",
      "title": "Annual Reports - Gorilla Technology",
-     "pending": 29
+     "pending": 30
     }
    },
    "ready": true,
