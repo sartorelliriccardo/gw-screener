@@ -1,14 +1,36 @@
 # Gorilla Watch
 
-Ultimo aggiornamento: **2026-11-07 02:52 UTC**
+Ultimo aggiornamento: **2026-11-07 03:51 UTC**
 
 | Sito | Pagine | Ultimo controllo | Stato |
 |---|---|---|---|
 | Gorilla Technology | 248 | 2026-11-07 02:51 UTC | ok |
 | Gorilla Tech Capital | 112 | 2026-11-07 01:40 UTC | ok |
-| Gorilla IR | 4 | 2026-11-07 02:51 UTC | ok |
+| Gorilla IR | 4 | 2026-11-07 03:51 UTC | ok |
 
 ## Ultime modifiche rilevate
+
+### [Events & Presentations - Gorilla Technology](https://investors.gorilla-technology.com/events-presentations/)
+2026-11-07 03:51 UTC · Gorilla IR · pagina modificata
+
+- ~~There are currently no events to display.~~
+- ~~Investor Presentation~~
+- ~~October 22, 2026 October 23, 2026~~
+- ~~Edge AI Taipei 2026~~
+- ~~Location: Taipei, Taiwan~~
+- ~~Add to Outlook~~
+- ~~Add to Google~~
+- ~~Event Link~~
+- link tolto: https://d2ghdaxqb194v2.cloudfront.net/2980/201933.pdf#sha=DDB67B805C62B73A
+- link tolto: https://event.webcasts.com/starthere.jsp?ei=1762358&tp_key=51247244e9
+- link tolto: https://investors.gorilla-technology.com/events-presentations/=AddToLink2=
+- link tolto: https://taipei2026.edgeaifoundation.org/
+- link tolto: https://www.computextaipei.com.tw/en/index.html
+- link tolto: https://www.gowebcasting.com/events/gorilla-technology-group/2026/03/02/fiscal-year-2025-financial-results/play
+- link tolto: https://www.gowebcasting.com/events/gorilla-technology-group/2026/05/27/q1-2026-financial-results/play
+- link tolto: https://www.gowebcasting.com/events/gorilla-technology-group/2026/08/24/q2-and-half-year-2026-financial-results/play
+- link tolto: https://www.mwcbarcelona.com/
+- link tolto: https://www.redchip.com/webinar/GRRR/83305104264
 
 ### [Annual Reports - Gorilla Technology](https://investors.gorilla-technology.com/annual-reports/)
 2026-11-06 16:28 UTC · Gorilla IR · pagina modificata
