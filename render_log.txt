@@ -2,57 +2,56 @@ https://investors.gorilla-technology.com/press-releases/
   FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/Emailapi2.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za208zd870183551xf1&_p=1794148835580&_gaz=1&gcd=13l3l3l3l1 net::ERR_ABORTED
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za200zd870183551xf1&_p=1794148835580&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
+  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za208zd870183551xf1&_p=1794152326068&_gaz=1&gcd=13l3l3l3l1 net::ERR_ABORTED
 tentativo 1: 92 link
 https://investors.gorilla-technology.com/events-presentations/
   FALLITA https://www.b2i.us/b2i/Calapi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/Showapi.asp?v=1.0.8.2&id=718 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
-  FALLITA https://www.b2i.us/b2i/Emailapi2.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
+  FALLITA https://www.b2i.us/b2i/Emailapi2.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/Calapi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
 tentativo 1: 67 link
-  FALLITA https://www.b2i.us/b2i/Showapi.asp?v=1.0.8.2&id=718 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/Calapi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
+  FALLITA https://www.b2i.us/b2i/Showapi.asp?v=1.0.8.2&id=718 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/Emailapi2.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/Calapi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za208zd870183551xf1&_p=1794148853627&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
+  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za208zd870183551xf1&_p=1794152346833&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
 tentativo 2: 67 link
   FALLITA https://www.b2i.us/b2i/Calapi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
-  FALLITA https://www.b2i.us/b2i/Showapi.asp?v=1.0.8.2&id=718 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
+  FALLITA https://www.b2i.us/b2i/Showapi.asp?v=1.0.8.2&id=718 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/Emailapi2.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/Calapi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za208zd870183551xf1&_p=1794148867413&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
+  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za208zd870183551xf1&_p=1794152360944&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
 tentativo 3: 67 link
 https://investors.gorilla-technology.com/quarterly-results/
   FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/Emailapi2.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za208zd870183551xf1&_p=1794148888145&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
+  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za208zd870183551xf1&_p=1794152382113&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
 tentativo 1: 116 link
 https://investors.gorilla-technology.com/annual-reports/
   FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/Emailapi2.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/SecData2.asp?b=2980&v=1.0.8.5&api=Is3Tp8Xk7&t=20-F&o=default&p=1&div=annual-reports&lo=24&sf=0&df=1&css=1&ol=2&oi=2&f net::ERR_FAILED
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za208zd870183551xf1&_p=1794148897456&_gaz=1&gcd=13l3l3l3l1 net::ERR_ABORTED
+  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za208zd870183551xf1&_p=1794152392181&_gaz=1&gcd=13l3l3l3l1 net::ERR_ABORTED
 tentativo 1: 67 link
+  FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/Emailapi2.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
-  FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/SecData2.asp?b=2980&v=1.0.8.5&api=Is3Tp8Xk7&t=20-F&o=default&p=1&div=annual-reports&lo=24&sf=0&df=1&css=1&ol=2&oi=2&f net::ERR_FAILED
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za208zd870183551xf1&_p=1794148907185&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za200zd870183551xf1&_p=1794148907185&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
+  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za208zd870183551xf1&_p=1794152401980&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
+  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za200zd870183551xf1&_p=1794152401980&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
 tentativo 2: 67 link
   FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/Emailapi2.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/CodeApi.asp?v=1.0.8.2 net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin
   FALLITA https://www.b2i.us/b2i/SecData2.asp?b=2980&v=1.0.8.5&api=Is3Tp8Xk7&t=20-F&o=default&p=1&div=annual-reports&lo=24&sf=0&df=1&css=1&ol=2&oi=2&f net::ERR_FAILED
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za208zd870183551xf1&_p=1794148920923&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za200zd870183551xf1&_p=1794148920923&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
+  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za208zd870183551xf1&_p=1794152415781&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
+  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b41v870183551za200zd870183551xf1&_p=1794152415781&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
 tentativo 3: 67 link
