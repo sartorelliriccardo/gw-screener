@@ -1,14 +1,11 @@
 https://investors.gorilla-technology.com/press-releases/
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b50v870183551za208zd870183551xf1&_p=1794259579645&_gaz=1&gcd=13l3l3l3l1 net::ERR_ABORTED
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b50v870183551za200zd870183551xf1&_p=1794259579645&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
+  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b50h1v870183551za208zd870183551xf1&_p=1794262878933&_gaz=1&gcd=13l3l3l3 net::ERR_ABORTED
 tentativo 1: 94 link
 https://investors.gorilla-technology.com/events-presentations/
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b50v870183551za208zd870183551xf1&_p=1794259588236&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
 tentativo 1: 144 link
 https://investors.gorilla-technology.com/quarterly-results/
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b50v870183551za208zd870183551xf1&_p=1794259600009&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
+  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b50h1v870183551za208zd870183551xf1&_p=1794262895172&gcd=13l3l3l3l1l1&np net::ERR_ABORTED
 tentativo 1: 118 link
 https://investors.gorilla-technology.com/annual-reports/
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b50v870183551za208zd870183551xf1&_p=1794259608106&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b50v870183551za200zd870183551xf1&_p=1794259608106&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
+  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6b50h1v870183551za208zd870183551xf1&_p=1794262903087&gcd=13l3l3l3l1l1&np net::ERR_ABORTED
 tentativo 1: 80 link
