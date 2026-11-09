@@ -651,5 +651,98 @@
    ],
    "chrome": 351
   }
+ },
+ {
+  "ts": "2026-11-09T15:04:33+00:00",
+  "source": "Gorilla IR",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://investors.gorilla-technology.com/events-presentations/",
+  "text": [
+   "+ There are currently no events to display.",
+   "+ Investor Presentation",
+   "+ October 22, 2026 October 23, 2026",
+   "+ Edge AI Taipei 2026",
+   "+ Location: Taipei, Taiwan",
+   "+ Add to Outlook",
+   "+ Add to Google",
+   "+ Event Link",
+   "+ … altre 45 righe aggiunte",
+   "link aggiunti: https://d2ghdaxqb194v2.cloudfront.net/2980/201933.pdf#sha=DDB67B805C62B73A, https://event.webcasts.com/starthere.jsp?ei=1762358&tp_key=51247244e9, https://investors.gorilla-technology.com/events-presentations/=AddToLink2=, https://taipei2026.edgeaifoundation.org/, https://www.computextaipei.com.tw/en/index.html (+5)",
+   "menu/piè di pagina cambiati (351 caratteri)"
+  ],
+  "detail": {
+   "page_title": "Events & Presentations - Gorilla Technology",
+   "title": null,
+   "desc": null,
+   "removed": [],
+   "n_removed": 0,
+   "added": [
+    "There are currently no events to display.",
+    "Investor Presentation",
+    "October 22, 2026 October 23, 2026",
+    "Edge AI Taipei 2026",
+    "Location: Taipei, Taiwan",
+    "Add to Outlook",
+    "Add to Google",
+    "Event Link"
+   ],
+   "n_added": 53,
+   "links_added": [
+    "https://d2ghdaxqb194v2.cloudfront.net/2980/201933.pdf#sha=DDB67B805C62B73A",
+    "https://event.webcasts.com/starthere.jsp?ei=1762358&tp_key=51247244e9",
+    "https://investors.gorilla-technology.com/events-presentations/=AddToLink2=",
+    "https://taipei2026.edgeaifoundation.org/",
+    "https://www.computextaipei.com.tw/en/index.html",
+    "https://www.gowebcasting.com/events/gorilla-technology-group/2026/03/02/fiscal-year-2025-financial-results/play",
+    "https://www.gowebcasting.com/events/gorilla-technology-group/2026/05/27/q1-2026-financial-results/play",
+    "https://www.gowebcasting.com/events/gorilla-technology-group/2026/08/24/q2-and-half-year-2026-financial-results/play",
+    "https://www.mwcbarcelona.com/",
+    "https://www.redchip.com/webinar/GRRR/83305104264"
+   ],
+   "links_removed": [],
+   "chrome": 351
+  }
+ },
+ {
+  "ts": "2026-11-09T15:04:33+00:00",
+  "source": "Gorilla IR",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://investors.gorilla-technology.com/press-releases/",
+  "text": [
+   "menu/piè di pagina cambiati (351 caratteri)"
+  ],
+  "detail": {
+   "page_title": "Press Releases - Gorilla Technology",
+   "title": null,
+   "desc": null,
+   "removed": [],
+   "n_removed": 0,
+   "added": [],
+   "n_added": 0,
+   "links_added": [],
+   "links_removed": [],
+   "chrome": 351
+  }
+ },
+ {
+  "ts": "2026-11-09T15:04:33+00:00",
+  "source": "Gorilla IR",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://investors.gorilla-technology.com/quarterly-results/",
+  "text": [
+   "menu/piè di pagina cambiati (351 caratteri)"
+  ],
+  "detail": {
+   "page_title": "Quarterly Results - Gorilla Technology",
+   "title": null,
+   "desc": null,
+   "removed": [],
+   "n_removed": 0,
+   "added": [],
+   "n_added": 0,
+   "links_added": [],
+   "links_removed": [],
+   "chrome": 351
+  }
  }
 ]

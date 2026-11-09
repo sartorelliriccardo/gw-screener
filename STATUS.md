@@ -1,14 +1,44 @@
 # Gorilla Watch
 
-Ultimo aggiornamento: **2026-11-09 13:51 UTC**
+Ultimo aggiornamento: **2026-11-09 15:04 UTC**
 
 | Sito | Pagine | Ultimo controllo | Stato |
 |---|---|---|---|
-| Gorilla Technology | 248 | 2026-11-09 07:58 UTC | ok |
-| Gorilla Tech Capital | 112 | 2026-11-09 07:58 UTC | ok |
-| Gorilla IR | 4 | 2026-11-09 13:51 UTC | ok |
+| Gorilla Technology | 248 | 2026-11-09 14:57 UTC | ok |
+| Gorilla Tech Capital | 112 | 2026-11-09 14:57 UTC | ok |
+| Gorilla IR | 4 | 2026-11-09 14:57 UTC | ok |
 
 ## Ultime modifiche rilevate
+
+### [Quarterly Results - Gorilla Technology](https://investors.gorilla-technology.com/quarterly-results/)
+2026-11-09 15:04 UTC · Gorilla IR · pagina modificata
+
+
+### [Press Releases - Gorilla Technology](https://investors.gorilla-technology.com/press-releases/)
+2026-11-09 15:04 UTC · Gorilla IR · pagina modificata
+
+
+### [Events & Presentations - Gorilla Technology](https://investors.gorilla-technology.com/events-presentations/)
+2026-11-09 15:04 UTC · Gorilla IR · pagina modificata
+
+- **There are currently no events to display.**
+- **Investor Presentation**
+- **October 22, 2026 October 23, 2026**
+- **Edge AI Taipei 2026**
+- **Location: Taipei, Taiwan**
+- **Add to Outlook**
+- **Add to Google**
+- **Event Link**
+- link aggiunto: https://d2ghdaxqb194v2.cloudfront.net/2980/201933.pdf#sha=DDB67B805C62B73A
+- link aggiunto: https://event.webcasts.com/starthere.jsp?ei=1762358&tp_key=51247244e9
+- link aggiunto: https://investors.gorilla-technology.com/events-presentations/=AddToLink2=
+- link aggiunto: https://taipei2026.edgeaifoundation.org/
+- link aggiunto: https://www.computextaipei.com.tw/en/index.html
+- link aggiunto: https://www.gowebcasting.com/events/gorilla-technology-group/2026/03/02/fiscal-year-2025-financial-results/play
+- link aggiunto: https://www.gowebcasting.com/events/gorilla-technology-group/2026/05/27/q1-2026-financial-results/play
+- link aggiunto: https://www.gowebcasting.com/events/gorilla-technology-group/2026/08/24/q2-and-half-year-2026-financial-results/play
+- link aggiunto: https://www.mwcbarcelona.com/
+- link aggiunto: https://www.redchip.com/webinar/GRRR/83305104264
 
 ### [Events & Presentations - Gorilla Technology](https://investors.gorilla-technology.com/events-presentations/)
 2026-11-07 03:51 UTC · Gorilla IR · pagina modificata
