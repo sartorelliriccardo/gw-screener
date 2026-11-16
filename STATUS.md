@@ -1,14 +1,54 @@
 # Gorilla Watch
 
-Ultimo aggiornamento: **2026-11-16 21:50 UTC**
+Ultimo aggiornamento: **2026-11-16 22:50 UTC**
 
 | Sito | Pagine | Ultimo controllo | Stato |
 |---|---|---|---|
 | Gorilla Technology | 248 | 2026-11-16 18:57 UTC | ok |
 | Gorilla Tech Capital | 112 | 2026-11-16 18:57 UTC | ok |
-| Gorilla IR | 4 | 2026-11-16 21:50 UTC | ok |
+| Gorilla IR | 4 | 2026-11-16 22:50 UTC | ok |
 
 ## Ultime modifiche rilevate
+
+### [Quarterly Results - Gorilla Technology](https://investors.gorilla-technology.com/quarterly-results/)
+2026-11-16 22:50 UTC · Gorilla IR · pagina modificata
+
+- **Third Quarter 2026**
+- **Earnings Call**
+- link aggiunto: https://www.gowebcasting.com/events/gorilla-technology-group/2026/11/19/q3-2026-financial-results/play
+
+### [Events & Presentations - Gorilla Technology](https://investors.gorilla-technology.com/events-presentations/)
+2026-11-16 22:50 UTC · Gorilla IR · pagina modificata
+
+- ~~There are currently no events to display.~~
+- **November 19, 2026 January 1, 1900 04:30 PM Eastern**
+- **Gorilla Technology to Host Third Quarter 2026 Financial Results Conference Call**
+- **Add to Outlook**
+- **Add to Google**
+- **Webcast Link**
+- link aggiunto: https://www.b2i.us/profiles/investor/SetReminder.asp?M=ec&ID=14656
+- link aggiunto: https://www.b2i.us/profiles/investor/SetReminder2.asp?M=ec&ID=14656
+- link aggiunto: https://www.gowebcasting.com/events/gorilla-technology-group/2026/11/19/q3-2026-financial-results/play
+
+### [Press Releases - Gorilla Technology](https://investors.gorilla-technology.com/press-releases/)
+2026-11-16 22:50 UTC · Gorilla IR · pagina modificata
+
+- ~~15~~
+- ~~Jul~~
+- ~~2026~~
+- ~~Gorilla Technology Group Inc. Announces Pricing of $125 Million Senior Unsecured Convertible Bond Offering to Commence NeutraDC Batam Project in Indonesia~~
+- ~~PDF Version~~
+- ~~London, United Kingdom--(Newsfile Corp. - July 15, 2026) - Gorilla Technology Group Inc. (NASDAQ: GR...~~
+- **16**
+- **Nov**
+- **2026**
+- **Gorilla Technology to Host Third Quarter Financial Results Conference Call on November 19 at 4:30 p.m. ET**
+- **PDF Version**
+- **London, United Kingdom--(Newsfile Corp. - November 16, 2026) - Gorilla Technology Group Inc. (NASDAQ...**
+- link aggiunto: https://investors.gorilla-technology.com/gorilla-technology-to-host-third-quarter-financial-results-conference-call-on-november-19-at-430-p-m-et
+- link aggiunto: https://s3.amazonaws.com/b2icontent.irpass.cc/2980/rl173407.pdf
+- link tolto: https://investors.gorilla-technology.com/gorilla-technology-group-inc-announces-pricing-of-125-million-senior-unsecured-convertible-bond-offering-to-commence-neutradc-batam-project-in-indonesia
+- link tolto: https://s3.amazonaws.com/b2icontent.irpass.cc/2980/rl168173.pdf
 
 ### [Quarterly Results - Gorilla Technology](https://investors.gorilla-technology.com/quarterly-results/)
 2026-11-09 15:04 UTC · Gorilla IR · pagina modificata
