@@ -1,14 +1,34 @@
 # Gorilla Watch
 
-Ultimo aggiornamento: **2026-11-19 20:56 UTC**
+Ultimo aggiornamento: **2026-11-19 21:54 UTC**
 
 | Sito | Pagine | Ultimo controllo | Stato |
 |---|---|---|---|
 | Gorilla Technology | 250 | 2026-11-19 20:56 UTC | ok |
 | Gorilla Tech Capital | 112 | 2026-11-19 19:39 UTC | ok |
-| Gorilla IR | 4 | 2026-11-19 20:56 UTC | ok |
+| Gorilla IR | 4 | 2026-11-19 21:54 UTC | ok |
 
 ## Ultime modifiche rilevate
+
+### [Press Releases - Gorilla Technology](https://investors.gorilla-technology.com/press-releases/)
+2026-11-19 21:54 UTC · Gorilla IR · pagina modificata
+
+- ~~17~~
+- ~~Jul~~
+- ~~2026~~
+- ~~Gorilla Announces Delivery of CVR Payment Notice~~
+- ~~PDF Version~~
+- ~~London, United Kingdom--(Newsfile Corp. - July 17, 2026) - Gorilla Technology Group Inc. (NASDA...~~
+- **19**
+- **Nov**
+- **2026**
+- **Gorilla Technology Exceeds All Previous Quarterly Revenue Performance with US$69.5 Million in Q3 2026, Surging 163% Year on Year**
+- **PDF Version**
+- **- Q3 revenue accelerated 39% sequentially and exceeded the upper end of the Company's reve...**
+- link aggiunto: https://investors.gorilla-technology.com/gorilla-technology-exceeds-all-previous-quarterly-revenue-performance-with-us69-5-million-in-q3-2026-surging-163-year-on-year
+- link aggiunto: https://s3.amazonaws.com/b2icontent.irpass.cc/2980/rl173512.pdf
+- link tolto: https://investors.gorilla-technology.com/gorilla-announces-delivery-of-cvr-payment-notice-2
+- link tolto: https://s3.amazonaws.com/b2icontent.irpass.cc/2980/rl168216.pdf
 
 ### [Preview Archives | Gorilla Technology](https://www.gorilla-technology.com/team/preview/)
 2026-11-19 07:18 UTC · Gorilla Technology · nuova pagina
@@ -272,44 +292,6 @@ Ultimo aggiornamento: **2026-11-19 20:56 UTC**
 - link tolto: https://www.gorilla-technology.com/whitepapers
 - link tolto: https://www.linkedin.com/company/gorilla-technology-group
 - link tolto: https://x.com/GorillaTechGrp
-
-### [Annual Reports - Gorilla Technology](https://investors.gorilla-technology.com/annual-reports/)
-2026-11-01 23:39 UTC · Gorilla IR · pagina modificata
-
-- ~~Gateway Timeout~~
-- **Annual Reports**
-- **ANNUAL REPORTS**
-- **Years of Innovation**
-- **Comprehensive Annual Reviews**
-- **Gorilla Technology**
-- link aggiunto: https://insights.gorilla-technology.com/
-- link aggiunto: https://investors.gorilla-technology.com/
-- link aggiunto: https://investors.gorilla-technology.com/analyst-coverage
-- link aggiunto: https://investors.gorilla-technology.com/annual-reports
-- link aggiunto: https://investors.gorilla-technology.com/contact-ir
-- link aggiunto: https://investors.gorilla-technology.com/corporate-governance
-- link aggiunto: https://investors.gorilla-technology.com/email-alerts
-- link aggiunto: https://investors.gorilla-technology.com/events-presentations
-- link aggiunto: https://investors.gorilla-technology.com/faqs
-- link aggiunto: https://investors.gorilla-technology.com/press-releases
-- link aggiunto: https://investors.gorilla-technology.com/quarterly-results
-- link aggiunto: https://investors.gorilla-technology.com/sec-filings
-- link aggiunto: https://investors.gorilla-technology.com/stock-information
-- link aggiunto: https://investors.gorilla-technology.com/videos
-- link aggiunto: https://www.facebook.com/GorillaTechnology
-- link aggiunto: https://www.gorilla-technology.com
-- link aggiunto: https://www.gorilla-technology.com/about-us
-- link aggiunto: https://www.gorilla-technology.com/about-us/careers
-- link aggiunto: https://www.gorilla-technology.com/about-us/corporate-social-responsibility
-- link aggiunto: https://www.gorilla-technology.com/about-us/global-footprint
-- link aggiunto: https://www.gorilla-technology.com/about-us/leadership
-- link aggiunto: https://www.gorilla-technology.com/about-us/partners
-- link aggiunto: https://www.gorilla-technology.com/about-us/privacy-policy
-- link aggiunto: https://www.gorilla-technology.com/about-us/terms-of-service
-- link aggiunto: https://www.gorilla-technology.com/customer-success
-- link aggiunto: https://www.gorilla-technology.com/whitepapers
-- link aggiunto: https://www.linkedin.com/company/gorilla-technology-group
-- link aggiunto: https://x.com/GorillaTechGrp
 
 
 _Strumento personale. Non è consulenza finanziaria: verificare sui documenti originali._
