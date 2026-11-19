@@ -1,14 +1,22 @@
 # Gorilla Watch
 
-Ultimo aggiornamento: **2026-11-19 05:47 UTC**
+Ultimo aggiornamento: **2026-11-19 07:18 UTC**
 
 | Sito | Pagine | Ultimo controllo | Stato |
 |---|---|---|---|
-| Gorilla Technology | 248 | 2026-11-19 05:39 UTC | ok |
+| Gorilla Technology | 250 | 2026-11-19 07:18 UTC | ok |
 | Gorilla Tech Capital | 112 | 2026-11-19 05:39 UTC | ok |
-| Gorilla IR | 4 | 2026-11-19 05:39 UTC | ok |
+| Gorilla IR | 4 | 2026-11-19 07:18 UTC | ok |
 
 ## Ultime modifiche rilevate
+
+### [Preview Archives | Gorilla Technology](https://www.gorilla-technology.com/team/preview/)
+2026-11-19 07:18 UTC · Gorilla Technology · nuova pagina
+
+
+### [Richa Ishita | Gorilla Technology](https://www.gorilla-technology.com/leadership/richa-ishita/)
+2026-11-19 07:18 UTC · Gorilla Technology · nuova pagina
+
 
 ### [Quarterly Results - Gorilla Technology](https://investors.gorilla-technology.com/quarterly-results/)
 2026-11-16 22:50 UTC · Gorilla IR · pagina modificata
@@ -302,64 +310,6 @@ Ultimo aggiornamento: **2026-11-19 05:47 UTC**
 - link aggiunto: https://www.gorilla-technology.com/whitepapers
 - link aggiunto: https://www.linkedin.com/company/gorilla-technology-group
 - link aggiunto: https://x.com/GorillaTechGrp
-
-### [https://investors.gorilla-technology.com/annual-reports/](https://investors.gorilla-technology.com/annual-reports/)
-2026-11-01 22:42 UTC · Gorilla IR · pagina modificata
-
-- ~~Annual Reports~~
-- ~~ANNUAL REPORTS~~
-- ~~Years of Innovation~~
-- ~~Comprehensive Annual Reviews~~
-- ~~Gorilla Technology~~
-- **Gateway Timeout**
-- link tolto: https://insights.gorilla-technology.com/
-- link tolto: https://investors.gorilla-technology.com/
-- link tolto: https://investors.gorilla-technology.com/analyst-coverage
-- link tolto: https://investors.gorilla-technology.com/annual-reports
-- link tolto: https://investors.gorilla-technology.com/contact-ir
-- link tolto: https://investors.gorilla-technology.com/corporate-governance
-- link tolto: https://investors.gorilla-technology.com/email-alerts
-- link tolto: https://investors.gorilla-technology.com/events-presentations
-- link tolto: https://investors.gorilla-technology.com/faqs
-- link tolto: https://investors.gorilla-technology.com/press-releases
-- link tolto: https://investors.gorilla-technology.com/quarterly-results
-- link tolto: https://investors.gorilla-technology.com/sec-filings
-- link tolto: https://investors.gorilla-technology.com/stock-information
-- link tolto: https://investors.gorilla-technology.com/videos
-- link tolto: https://www.facebook.com/GorillaTechnology
-- link tolto: https://www.gorilla-technology.com
-- link tolto: https://www.gorilla-technology.com/about-us
-- link tolto: https://www.gorilla-technology.com/about-us/careers
-- link tolto: https://www.gorilla-technology.com/about-us/corporate-social-responsibility
-- link tolto: https://www.gorilla-technology.com/about-us/global-footprint
-- link tolto: https://www.gorilla-technology.com/about-us/leadership
-- link tolto: https://www.gorilla-technology.com/about-us/partners
-- link tolto: https://www.gorilla-technology.com/about-us/privacy-policy
-- link tolto: https://www.gorilla-technology.com/about-us/terms-of-service
-- link tolto: https://www.gorilla-technology.com/customer-success
-- link tolto: https://www.gorilla-technology.com/whitepapers
-- link tolto: https://www.linkedin.com/company/gorilla-technology-group
-- link tolto: https://x.com/GorillaTechGrp
-
-### [Annual Reports - Gorilla Technology](https://investors.gorilla-technology.com/annual-reports/)
-2026-11-01 19:41 UTC · Gorilla IR · pagina modificata
-
-- ~~Apr 15, 2026 PDF~~
-- ~~Annual and transition report of foreign private issuers~~
-- ~~Apr 30, 2025 PDF~~
-- ~~Annual and transition report of foreign private issuers~~
-- ~~May 15, 2024 PDF~~
-- ~~Annual and transition report of foreign private issuers~~
-- ~~Apr 28, 2023 PDF~~
-- ~~Annual and transition report of foreign private issuers~~
-- link tolto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-23-033461.htm
-- link tolto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-23-033461.pdf
-- link tolto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-24-043724.htm
-- link tolto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-24-043724.pdf
-- link tolto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-25-037703.htm
-- link tolto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-25-037703.pdf
-- link tolto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001437749-26-012385.htm
-- link tolto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001437749-26-012385.pdf
 
 
 _Strumento personale. Non è consulenza finanziaria: verificare sui documenti originali._
