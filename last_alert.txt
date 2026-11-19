@@ -1,17 +1,10 @@
-2026-11-19 21:54:31
+2026-11-19 23:47:09
 [Gorilla IR]
-  PAGINA MODIFICATA: https://investors.gorilla-technology.com/press-releases/
-   - 17
-   - Jul
-   - 2026
-   - Gorilla Announces Delivery of CVR Payment Notice
-   - PDF Version
-   - London, United Kingdom--(Newsfile Corp. - July 17, 2026) - Gorilla Technology Group Inc. (NASDA...
-   + 19
-   + Nov
-   + 2026
-   + Gorilla Technology Exceeds All Previous Quarterly Revenue Performance with US$69.5 Million in Q3 2026, Surging 163% Year on Year
-   + PDF Version
-   + - Q3 revenue accelerated 39% sequentially and exceeded the upper end of the Company's reve...
-   link aggiunti: https://investors.gorilla-technology.com/gorilla-technology-exceeds-all-previou…, https://s3.amazonaws.com/b2icontent.irpass.cc/2980/rl173512.pdf
-   link tolti: https://investors.gorilla-technology.com/gorilla-announces-delivery-of-cvr-paym…, https://s3.amazonaws.com/b2icontent.irpass.cc/2980/rl168216.pdf
+  NUOVO FILE: https://s3.amazonaws.com/b2icontent.irpass.cc/2980/rl173512.pdf
+   Earnings Release (90 KB, 8 pagine)
+   trovato su https://investors.gorilla-technology.com/quarterly-results/
+   Gorilla Technology Exceeds All Previous Quarterly Revenue Performance with US$69.5
+   Million in Q3 2026, Surging 163% Year on Year
+   - Q3 revenue accelerated 39% sequentially and exceeded the upper end of the Company's revenue
+  PAGINA MODIFICATA: https://investors.gorilla-technology.com/quarterly-results/
+   link aggiunti: https://s3.amazonaws.com/b2icontent.irpass.cc/2980/rl173512.pdf

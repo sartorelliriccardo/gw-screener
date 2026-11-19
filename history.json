@@ -947,5 +947,59 @@
    ],
    "chrome": 0
   }
+ },
+ {
+  "ts": "2026-11-19T23:47:09+00:00",
+  "source": "Gorilla IR",
+  "type": "NUOVO FILE",
+  "url": "https://s3.amazonaws.com/b2icontent.irpass.cc/2980/rl173512.pdf",
+  "text": [
+   "Earnings Release (90 KB, 8 pagine)",
+   "trovato su https://investors.gorilla-technology.com/quarterly-results/",
+   "Gorilla Technology Exceeds All Previous Quarterly Revenue Performance with US$69.5",
+   "Million in Q3 2026, Surging 163% Year on Year",
+   "- Q3 revenue accelerated 39% sequentially and exceeded the upper end of the Company's revenue"
+  ],
+  "detail": {
+   "page_title": "Earnings Release",
+   "file": {
+    "kind": "new",
+    "size": 92483,
+    "pages": 8,
+    "sha": "1ac026c8f1e8",
+    "head": [
+     "Gorilla Technology Exceeds All Previous Quarterly Revenue Performance with US$69.5",
+     "Million in Q3 2026, Surging 163% Year on Year",
+     "- Q3 revenue accelerated 39% sequentially and exceeded the upper end of the Company's revenue",
+     "expectations by 39% -",
+     "- Gross profit delivers a remarkable US$11 million quarterly turnaround, with gross margin rebounding 17",
+     "percentage points to 12.8% as Gorilla gains operating scale -"
+    ],
+    "page": "https://investors.gorilla-technology.com/quarterly-results/"
+   }
+  }
+ },
+ {
+  "ts": "2026-11-19T23:47:09+00:00",
+  "source": "Gorilla IR",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://investors.gorilla-technology.com/quarterly-results/",
+  "text": [
+   "link aggiunti: https://s3.amazonaws.com/b2icontent.irpass.cc/2980/rl173512.pdf"
+  ],
+  "detail": {
+   "page_title": "Quarterly Results - Gorilla Technology",
+   "title": null,
+   "desc": null,
+   "removed": [],
+   "n_removed": 0,
+   "added": [],
+   "n_added": 0,
+   "links_added": [
+    "https://s3.amazonaws.com/b2icontent.irpass.cc/2980/rl173512.pdf"
+   ],
+   "links_removed": [],
+   "chrome": 0
+  }
  }
 ]

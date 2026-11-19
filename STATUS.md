@@ -1,14 +1,23 @@
 # Gorilla Watch
 
-Ultimo aggiornamento: **2026-11-19 22:52 UTC**
+Ultimo aggiornamento: **2026-11-19 23:47 UTC**
 
 | Sito | Pagine | Ultimo controllo | Stato |
 |---|---|---|---|
 | Gorilla Technology | 250 | 2026-11-19 20:56 UTC | ok |
 | Gorilla Tech Capital | 112 | 2026-11-19 19:39 UTC | ok |
-| Gorilla IR | 4 | 2026-11-19 22:52 UTC | ok |
+| Gorilla IR | 4 | 2026-11-19 23:46 UTC | ok |
 
 ## Ultime modifiche rilevate
+
+### [Quarterly Results - Gorilla Technology](https://investors.gorilla-technology.com/quarterly-results/)
+2026-11-19 23:47 UTC · Gorilla IR · pagina modificata
+
+- link aggiunto: https://s3.amazonaws.com/b2icontent.irpass.cc/2980/rl173512.pdf
+
+### [Earnings Release](https://s3.amazonaws.com/b2icontent.irpass.cc/2980/rl173512.pdf)
+2026-11-19 23:47 UTC · Gorilla IR · nuovo file
+
 
 ### [Press Releases - Gorilla Technology](https://investors.gorilla-technology.com/press-releases/)
 2026-11-19 21:54 UTC · Gorilla IR · pagina modificata
@@ -216,82 +225,6 @@ Ultimo aggiornamento: **2026-11-19 22:52 UTC**
 ### [Investor Presentation](https://d2ghdaxqb194v2.cloudfront.net/2980/201933.pdf)
 2026-11-02 20:21 UTC · Gorilla IR · nuovo file
 
-
-### [Annual Reports - Gorilla Technology](https://investors.gorilla-technology.com/annual-reports/)
-2026-11-02 01:51 UTC · Gorilla IR · pagina modificata
-
-- ~~Gateway Timeout~~
-- **Annual Reports**
-- **ANNUAL REPORTS**
-- **Years of Innovation**
-- **Comprehensive Annual Reviews**
-- **Gorilla Technology**
-- link aggiunto: https://insights.gorilla-technology.com/
-- link aggiunto: https://investors.gorilla-technology.com/
-- link aggiunto: https://investors.gorilla-technology.com/analyst-coverage
-- link aggiunto: https://investors.gorilla-technology.com/annual-reports
-- link aggiunto: https://investors.gorilla-technology.com/contact-ir
-- link aggiunto: https://investors.gorilla-technology.com/corporate-governance
-- link aggiunto: https://investors.gorilla-technology.com/email-alerts
-- link aggiunto: https://investors.gorilla-technology.com/events-presentations
-- link aggiunto: https://investors.gorilla-technology.com/faqs
-- link aggiunto: https://investors.gorilla-technology.com/press-releases
-- link aggiunto: https://investors.gorilla-technology.com/quarterly-results
-- link aggiunto: https://investors.gorilla-technology.com/sec-filings
-- link aggiunto: https://investors.gorilla-technology.com/stock-information
-- link aggiunto: https://investors.gorilla-technology.com/videos
-- link aggiunto: https://www.facebook.com/GorillaTechnology
-- link aggiunto: https://www.gorilla-technology.com
-- link aggiunto: https://www.gorilla-technology.com/about-us
-- link aggiunto: https://www.gorilla-technology.com/about-us/careers
-- link aggiunto: https://www.gorilla-technology.com/about-us/corporate-social-responsibility
-- link aggiunto: https://www.gorilla-technology.com/about-us/global-footprint
-- link aggiunto: https://www.gorilla-technology.com/about-us/leadership
-- link aggiunto: https://www.gorilla-technology.com/about-us/partners
-- link aggiunto: https://www.gorilla-technology.com/about-us/privacy-policy
-- link aggiunto: https://www.gorilla-technology.com/about-us/terms-of-service
-- link aggiunto: https://www.gorilla-technology.com/customer-success
-- link aggiunto: https://www.gorilla-technology.com/whitepapers
-- link aggiunto: https://www.linkedin.com/company/gorilla-technology-group
-- link aggiunto: https://x.com/GorillaTechGrp
-
-### [https://investors.gorilla-technology.com/annual-reports/](https://investors.gorilla-technology.com/annual-reports/)
-2026-11-02 00:21 UTC · Gorilla IR · pagina modificata
-
-- ~~Annual Reports~~
-- ~~ANNUAL REPORTS~~
-- ~~Years of Innovation~~
-- ~~Comprehensive Annual Reviews~~
-- ~~Gorilla Technology~~
-- **Gateway Timeout**
-- link tolto: https://insights.gorilla-technology.com/
-- link tolto: https://investors.gorilla-technology.com/
-- link tolto: https://investors.gorilla-technology.com/analyst-coverage
-- link tolto: https://investors.gorilla-technology.com/annual-reports
-- link tolto: https://investors.gorilla-technology.com/contact-ir
-- link tolto: https://investors.gorilla-technology.com/corporate-governance
-- link tolto: https://investors.gorilla-technology.com/email-alerts
-- link tolto: https://investors.gorilla-technology.com/events-presentations
-- link tolto: https://investors.gorilla-technology.com/faqs
-- link tolto: https://investors.gorilla-technology.com/press-releases
-- link tolto: https://investors.gorilla-technology.com/quarterly-results
-- link tolto: https://investors.gorilla-technology.com/sec-filings
-- link tolto: https://investors.gorilla-technology.com/stock-information
-- link tolto: https://investors.gorilla-technology.com/videos
-- link tolto: https://www.facebook.com/GorillaTechnology
-- link tolto: https://www.gorilla-technology.com
-- link tolto: https://www.gorilla-technology.com/about-us
-- link tolto: https://www.gorilla-technology.com/about-us/careers
-- link tolto: https://www.gorilla-technology.com/about-us/corporate-social-responsibility
-- link tolto: https://www.gorilla-technology.com/about-us/global-footprint
-- link tolto: https://www.gorilla-technology.com/about-us/leadership
-- link tolto: https://www.gorilla-technology.com/about-us/partners
-- link tolto: https://www.gorilla-technology.com/about-us/privacy-policy
-- link tolto: https://www.gorilla-technology.com/about-us/terms-of-service
-- link tolto: https://www.gorilla-technology.com/customer-success
-- link tolto: https://www.gorilla-technology.com/whitepapers
-- link tolto: https://www.linkedin.com/company/gorilla-technology-group
-- link tolto: https://x.com/GorillaTechGrp
 
 
 _Strumento personale. Non è consulenza finanziaria: verificare sui documenti originali._

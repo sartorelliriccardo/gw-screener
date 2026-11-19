@@ -2912,7 +2912,7 @@
    "pages": {
     "https://investors.gorilla-technology.com/press-releases/": {
      "lastmod": "",
-     "checked": 1795128757.849825,
+     "checked": 1795132018.8085215,
      "etag": null,
      "lm": null,
      "hash": "7c1ebb94d09b60d66b202467b087549d7a3b5a3a",
@@ -2920,7 +2920,7 @@
     },
     "https://investors.gorilla-technology.com/events-presentations/": {
      "lastmod": "",
-     "checked": 1795128757.849825,
+     "checked": 1795132018.8085215,
      "etag": null,
      "lm": null,
      "hash": "b546ac61ba4fd2b80036372edfe5b5ac368794b1",
@@ -2928,15 +2928,15 @@
     },
     "https://investors.gorilla-technology.com/quarterly-results/": {
      "lastmod": "",
-     "checked": 1795128757.849825,
+     "checked": 1795132018.8085215,
      "etag": null,
      "lm": null,
-     "hash": "822b2ce5ff26ebd99a08ffdba01c1af1e84fcfcb",
+     "hash": "df82ad66cccc2f9b8b830690a86e54283ff0c835",
      "title": "Quarterly Results - Gorilla Technology"
     },
     "https://investors.gorilla-technology.com/annual-reports/": {
      "lastmod": "",
-     "checked": 1795128757.849825,
+     "checked": 1795132018.8085215,
      "etag": null,
      "lm": null,
      "hash": "04866d218e745fec5e649e30d19707600373e8ff",
@@ -3120,6 +3120,14 @@
      "pages": 26,
      "label": "Investor Presentation",
      "page": "https://investors.gorilla-technology.com/events-presentations/"
+    },
+    "https://s3.amazonaws.com/b2icontent.irpass.cc/2980/rl173512.pdf": {
+     "h": "",
+     "sha": "1ac026c8f1e85fb11e92f42ab7825214f38edb741e373e73c79034f0b9aacf0f",
+     "size": 92483,
+     "pages": 8,
+     "label": "Earnings Release",
+     "page": "https://investors.gorilla-technology.com/quarterly-results/"
     }
    },
    "count": 4
