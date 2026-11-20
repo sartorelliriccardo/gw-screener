@@ -1,17 +1,12 @@
 https://investors.gorilla-technology.com/press-releases/
-  HTTP 504 https://investors.gorilla-technology.com/press-releases/
-tentativo 1: 0 link
-  HTTP 504 https://investors.gorilla-technology.com/press-releases/
-tentativo 2: 0 link
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6bh1v870183551za208zd870183551xf1&_p=1795180503788&_gaz=1&gcd=13l3l3l3l1 net::ERR_ABORTED
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6bh1v870183551za200zd870183551xf1&_p=1795180503788&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
-tentativo 3: 94 link
+  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6bh1v870183551za208zd870183551xf1&_p=1795185314208&_gaz=1&gcd=13l3l3l3l1 net::ERR_ABORTED
+  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6bh1v870183551za200zd870183551xf1&_p=1795185314208&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
+tentativo 1: 94 link
 https://investors.gorilla-technology.com/events-presentations/
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6bh1v870183551za208zd870183551xf1&_p=1795180522533&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
 tentativo 1: 144 link
 https://investors.gorilla-technology.com/quarterly-results/
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6bh1v870183551za208zd870183551xf1&_p=1795180532632&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
+  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6bh1v870183551za208zd870183551xf1&_p=1795185338262&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
 tentativo 1: 122 link
 https://investors.gorilla-technology.com/annual-reports/
-  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6bh1v870183551za208zd870183551xf1&_p=1795180542870&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
+  FALLITA https://analytics.google.com/g/collect?v=2&tid=G-KBYP3WZ1T5&gtm=45je6bh1v870183551za208zd870183551xf1&_p=1795185347963&gcd=13l3l3l3l1l1&npa= net::ERR_ABORTED
 tentativo 1: 80 link
