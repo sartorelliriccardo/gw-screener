@@ -1,14 +1,32 @@
 # Gorilla Watch
 
-Ultimo aggiornamento: **2026-11-20 04:37 UTC**
+Ultimo aggiornamento: **2026-11-20 05:40 UTC**
 
 | Sito | Pagine | Ultimo controllo | Stato |
 |---|---|---|---|
 | Gorilla Technology | 250 | 2026-11-20 04:37 UTC | ok |
 | Gorilla Tech Capital | 112 | 2026-11-20 02:15 UTC | ok |
-| Gorilla IR | 4 | 2026-11-20 04:37 UTC | ok |
+| Gorilla IR | 4 | 2026-11-20 05:40 UTC | ok |
 
 ## Ultime modifiche rilevate
+
+### [Events & Presentations - Gorilla Technology](https://investors.gorilla-technology.com/events-presentations/)
+2026-11-20 05:40 UTC · Gorilla IR · pagina modificata
+
+- ~~Featured Presentations~~
+- ~~Investor Presentation~~
+- ~~Past Events~~
+- ~~January 28, 2026 January 1, 1900 04:15 PM Eastern~~
+- ~~RedChip Investor Webinar with Gorilla Technology Group (NASDAQ: GRRR)~~
+- ~~Add to Outlook~~
+- ~~Add to Google~~
+- ~~Registration Link~~
+- **There are currently no events to display.**
+- **Featured Presentations**
+- **Investor Presentation**
+- **Past Events**
+- link tolto: https://www.b2i.us/profiles/investor/SetReminder.asp?M=ec&ID=14656
+- link tolto: https://www.b2i.us/profiles/investor/SetReminder2.asp?M=ec&ID=14656
 
 ### [Quarterly Results - Gorilla Technology](https://investors.gorilla-technology.com/quarterly-results/)
 2026-11-19 23:47 UTC · Gorilla IR · pagina modificata
@@ -221,10 +239,6 @@ Ultimo aggiornamento: **2026-11-20 04:37 UTC**
 - link aggiunto: https://www.gowebcasting.com/events/gorilla-technology-group/2026/08/24/q2-and-half-year-2026-financial-results/play
 - link aggiunto: https://www.mwcbarcelona.com/
 - link aggiunto: https://www.redchip.com/webinar/GRRR/83305104264
-
-### [Investor Presentation](https://d2ghdaxqb194v2.cloudfront.net/2980/201933.pdf)
-2026-11-02 20:21 UTC · Gorilla IR · nuovo file
-
 
 
 _Strumento personale. Non è consulenza finanziaria: verificare sui documenti originali._

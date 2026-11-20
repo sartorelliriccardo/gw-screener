@@ -1001,5 +1001,55 @@
    "links_removed": [],
    "chrome": 0
   }
+ },
+ {
+  "ts": "2026-11-20T05:40:25+00:00",
+  "source": "Gorilla IR",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://investors.gorilla-technology.com/events-presentations/",
+  "text": [
+   "- Featured Presentations",
+   "- Investor Presentation",
+   "- Past Events",
+   "- January 28, 2026 January 1, 1900 04:15 PM Eastern",
+   "- RedChip Investor Webinar with Gorilla Technology Group (NASDAQ: GRRR)",
+   "- Add to Outlook",
+   "- Add to Google",
+   "- Registration Link",
+   "+ There are currently no events to display.",
+   "+ Featured Presentations",
+   "+ Investor Presentation",
+   "+ Past Events",
+   "link tolti: https://www.b2i.us/profiles/investor/SetReminder.asp?M=ec&ID=14656, https://www.b2i.us/profiles/investor/SetReminder2.asp?M=ec&ID=14656"
+  ],
+  "detail": {
+   "page_title": "Events & Presentations - Gorilla Technology",
+   "title": null,
+   "desc": null,
+   "removed": [
+    "Featured Presentations",
+    "Investor Presentation",
+    "Past Events",
+    "January 28, 2026 January 1, 1900 04:15 PM Eastern",
+    "RedChip Investor Webinar with Gorilla Technology Group (NASDAQ: GRRR)",
+    "Add to Outlook",
+    "Add to Google",
+    "Registration Link"
+   ],
+   "n_removed": 8,
+   "added": [
+    "There are currently no events to display.",
+    "Featured Presentations",
+    "Investor Presentation",
+    "Past Events"
+   ],
+   "n_added": 4,
+   "links_added": [],
+   "links_removed": [
+    "https://www.b2i.us/profiles/investor/SetReminder.asp?M=ec&ID=14656",
+    "https://www.b2i.us/profiles/investor/SetReminder2.asp?M=ec&ID=14656"
+   ],
+   "chrome": 0
+  }
  }
 ]
