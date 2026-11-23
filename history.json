@@ -1051,5 +1051,31 @@
    ],
    "chrome": 0
   }
+ },
+ {
+  "ts": "2026-11-23T02:37:22+00:00",
+  "source": "Gorilla Technology",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://www.gorilla-technology.com/team/leaders/",
+  "text": [
+   "link aggiunti: https://www.gorilla-technology.com/leadership/richa-ishita",
+   "link tolti: https://www.gorilla-technology.com/leadership/sonam-mohla"
+  ],
+  "detail": {
+   "page_title": "Leaders Archives | Gorilla Technology",
+   "title": null,
+   "desc": null,
+   "removed": [],
+   "n_removed": 0,
+   "added": [],
+   "n_added": 0,
+   "links_added": [
+    "https://www.gorilla-technology.com/leadership/richa-ishita"
+   ],
+   "links_removed": [
+    "https://www.gorilla-technology.com/leadership/sonam-mohla"
+   ],
+   "chrome": 0
+  }
  }
 ]
