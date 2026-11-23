@@ -1,14 +1,34 @@
 # Gorilla Watch
 
-Ultimo aggiornamento: **2026-11-23 11:57 UTC**
+Ultimo aggiornamento: **2026-11-23 13:20 UTC**
 
 | Sito | Pagine | Ultimo controllo | Stato |
 |---|---|---|---|
 | Gorilla Technology | 250 | 2026-11-23 10:40 UTC | ok |
 | Gorilla Tech Capital | 112 | 2026-11-23 10:40 UTC | ok |
-| Gorilla IR | 4 | 2026-11-23 11:57 UTC | ok |
+| Gorilla IR | 4 | 2026-11-23 13:20 UTC | ok |
 
 ## Ultime modifiche rilevate
+
+### [Press Releases - Gorilla Technology](https://investors.gorilla-technology.com/press-releases/)
+2026-11-23 13:20 UTC · Gorilla IR · pagina modificata
+
+- ~~21~~
+- ~~Jul~~
+- ~~2026~~
+- ~~Gorilla Technology Accelerates Execution Across its Asian AI Infrastructure Platform~~
+- ~~PDF Version~~
+- ~~- Recent capital raising supports the execution of signed and developing AI infrastructure programme...~~
+- **23**
+- **Nov**
+- **2026**
+- **Gorilla Technology Chairman and CEO Jay Chandan Awarded 2026 Nobel Sustainability Trust Medal for Outstanding Contribution to AI for Public Good**
+- **PDF Version**
+- **London, United Kingdom--(Newsfile Corp. - November 23, 2026) - The Nobel Sustainability Trust is ple...**
+- link aggiunto: https://investors.gorilla-technology.com/gorilla-technology-chairman-and-ceo-jay-chandan-awarded-2026-nobel-sustainability-trust-medal-for-outstanding-contribution-to-ai-for-public-good
+- link aggiunto: https://s3.amazonaws.com/b2icontent.irpass.cc/2980/rl173544.pdf
+- link tolto: https://investors.gorilla-technology.com/gorilla-technology-accelerates-execution-across-its-asian-ai-infrastructure-platform
+- link tolto: https://s3.amazonaws.com/b2icontent.irpass.cc/2980/rl168253.pdf
 
 ### [Gorilla Technology | Leadership](https://www.gorilla-technology.com/about-us/leadership/)
 2026-11-23 03:48 UTC · Gorilla Technology · pagina modificata
@@ -206,11 +226,6 @@ Ultimo aggiornamento: **2026-11-23 11:57 UTC**
 2026-11-02 21:23 UTC · Gorilla IR · pagina modificata
 
 - link tolto: https://continentalstock.com/
-
-### [Quarterly Results - Gorilla Technology](https://investors.gorilla-technology.com/quarterly-results/)
-2026-11-02 20:21 UTC · Gorilla IR · pagina modificata
-
-- link aggiunto: https://continentalstock.com/
 
 
 _Strumento personale. Non è consulenza finanziaria: verificare sui documenti originali._
