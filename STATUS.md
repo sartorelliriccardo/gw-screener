@@ -1,12 +1,12 @@
 # Gorilla Watch
 
-Ultimo aggiornamento: **2026-11-23 09:31 UTC**
+Ultimo aggiornamento: **2026-11-23 10:48 UTC**
 
 | Sito | Pagine | Ultimo controllo | Stato |
 |---|---|---|---|
-| Gorilla Technology | 250 | 2026-11-23 09:30 UTC | ok |
-| Gorilla Tech Capital | 112 | 2026-11-23 03:37 UTC | ok |
-| Gorilla IR | 4 | 2026-11-23 09:30 UTC | ok |
+| Gorilla Technology | 250 | 2026-11-23 10:40 UTC | ok |
+| Gorilla Tech Capital | 112 | 2026-11-23 10:40 UTC | ok |
+| Gorilla IR | 4 | 2026-11-23 10:40 UTC | ok |
 
 ## Ultime modifiche rilevate
 
