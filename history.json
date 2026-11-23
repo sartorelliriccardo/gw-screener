@@ -1077,5 +1077,38 @@
    ],
    "chrome": 0
   }
+ },
+ {
+  "ts": "2026-11-23T03:48:53+00:00",
+  "source": "Gorilla Technology",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://www.gorilla-technology.com/about-us/leadership/",
+  "text": [
+   "+ Richa Ishita",
+   "+ Head of Legal – India",
+   "+ Richa Ishita",
+   "+ Head of Legal – India",
+   "+ Richa Ishita is a professional technology and commercial lawyer specializing in data privacy, AI governance, and complex commercial contracting. She has more than 18 yea…",
+   "+ https://www.linkedin.com/in/richaishita/"
+  ],
+  "detail": {
+   "page_title": "Gorilla Technology | Leadership",
+   "title": null,
+   "desc": null,
+   "removed": [],
+   "n_removed": 0,
+   "added": [
+    "Richa Ishita",
+    "Head of Legal – India",
+    "Richa Ishita",
+    "Head of Legal – India",
+    "Richa Ishita is a professional technology and commercial lawyer specializing in data privacy, AI governance, and complex commercial contracting. She has more than 18 years of experience in technology, telecommunications and cross-border commercial transactions. She also brings deep expertise in employment and regulatory compliance, vendor management and litigation, working with clients and stakeholders across India, APAC and Europe. Since 2026, Richa has served as Head of Legal, India at Gorilla Technology, where she leads the legal function for the India business, covering commercial contracts, compliance, employment, and vendor and supplier arrangements. From 2024 to 2026, Richa was Assistant Vice President at EXL Service, where she led commercial contracting for the European business across the insurance, emerging industries, and automobile verticals. She negotiated global outsourcing agreements across the US, Europe, and India, and advised leadership on data privacy and AI governance. From 2023 to 2024, she worked as an independent legal consultant, drafting agreements and creating contract templates and playbooks for her clients. From 2018 to 2023, Richa served as Director, Legal at GlobalLogic, where she managed India compliance, HR and employment matters, and local vendor and supplier contracts. She also handled client commercial contracts for APAC and Europe. From 2014 to 2018, Richa was Senior Manager at Tata Teleservices, handling commercial contracts, labor compliance, and vendor contract management. Richa holds an LLB from Banaras Hindu University and an LLM from the National Law School of India University. Outside work, Richa enjoys writing, painting, pottery, and spending time with her husband and twin daughters.",
+    "https://www.linkedin.com/in/richaishita/"
+   ],
+   "n_added": 6,
+   "links_added": [],
+   "links_removed": [],
+   "chrome": 0
+  }
  }
 ]

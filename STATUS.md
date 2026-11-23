@@ -1,14 +1,24 @@
 # Gorilla Watch
 
-Ultimo aggiornamento: **2026-11-23 02:37 UTC**
+Ultimo aggiornamento: **2026-11-23 03:48 UTC**
 
 | Sito | Pagine | Ultimo controllo | Stato |
 |---|---|---|---|
-| Gorilla Technology | 250 | 2026-11-23 02:37 UTC | ok |
-| Gorilla Tech Capital | 112 | 2026-11-22 20:46 UTC | ok |
-| Gorilla IR | 4 | 2026-11-23 02:37 UTC | ok |
+| Gorilla Technology | 250 | 2026-11-23 03:37 UTC | ok |
+| Gorilla Tech Capital | 112 | 2026-11-23 03:37 UTC | ok |
+| Gorilla IR | 4 | 2026-11-23 03:37 UTC | ok |
 
 ## Ultime modifiche rilevate
+
+### [Gorilla Technology | Leadership](https://www.gorilla-technology.com/about-us/leadership/)
+2026-11-23 03:48 UTC · Gorilla Technology · pagina modificata
+
+- **Richa Ishita**
+- **Head of Legal – India**
+- **Richa Ishita**
+- **Head of Legal – India**
+- **Richa Ishita is a professional technology and commercial lawyer specializing in data privacy, AI governance, and complex commercial contracting. She has more than 18 years of experience in technology, telecommunications and cross-border commercial transactions. She also brings deep expertise in employment and regulatory compliance, vendor management and litigation, working with clients and stakeholders across India, APAC and Europe. Since 2026, Richa has served as Head of Legal, India at Gorilla Technology, where she leads the legal function for the India business, covering commercial contracts, compliance, employment, and vendor and supplier arrangements. From 2024 to 2026, Richa was Assistant Vice President at EXL Service, where she led commercial contracting for the European business across the insurance, emerging industries, and automobile verticals. She negotiated global outsourcing agreements across the US, Europe, and India, and advised leadership on data privacy and AI governance. From 2023 to 2024, she worked as an independent legal consultant, drafting agreements and creating contract templates and playbooks for her clients. From 2018 to 2023, Richa served as Director, Legal at GlobalLogic, where she managed India compliance, HR and employment matters, and local vendor and supplier contracts. She also handled client commercial contracts for APAC and Europe. From 2014 to 2018, Richa was Senior Manager at Tata Teleservices, handling commercial contracts, labor compliance, and vendor contract management. Richa holds an LLB from Banaras Hindu University and an LLM from the National Law School of India University. Outside work, Richa enjoys writing, painting, pottery, and spending time with her husband and twin daughters.**
+- **https://www.linkedin.com/in/richaishita/**
 
 ### [Leaders Archives | Gorilla Technology](https://www.gorilla-technology.com/team/leaders/)
 2026-11-23 02:37 UTC · Gorilla Technology · pagina modificata
@@ -201,27 +211,6 @@ Ultimo aggiornamento: **2026-11-23 02:37 UTC**
 2026-11-02 20:21 UTC · Gorilla IR · pagina modificata
 
 - link aggiunto: https://continentalstock.com/
-
-### [Annual Reports - Gorilla Technology](https://investors.gorilla-technology.com/annual-reports/)
-2026-11-02 20:21 UTC · Gorilla IR · pagina modificata
-
-- **Apr 15, 2026 PDF**
-- **Annual and transition report of foreign private issuers**
-- **Apr 30, 2025 PDF**
-- **Annual and transition report of foreign private issuers**
-- **May 15, 2024 PDF**
-- **Annual and transition report of foreign private issuers**
-- **Apr 28, 2023 PDF**
-- **Annual and transition report of foreign private issuers**
-- link aggiunto: https://continentalstock.com/
-- link aggiunto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-23-033461.htm
-- link aggiunto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-23-033461.pdf
-- link aggiunto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-24-043724.htm
-- link aggiunto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-24-043724.pdf
-- link aggiunto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-25-037703.htm
-- link aggiunto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001213900-25-037703.pdf
-- link aggiunto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001437749-26-012385.htm
-- link aggiunto: https://s3.amazonaws.com/sec.irpass.cc/2980/0001437749-26-012385.pdf
 
 
 _Strumento personale. Non è consulenza finanziaria: verificare sui documenti originali._
