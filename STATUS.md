@@ -1,14 +1,30 @@
 # Gorilla Watch
 
-Ultimo aggiornamento: **2026-11-24 06:10 UTC**
+Ultimo aggiornamento: **2026-11-24 07:19 UTC**
 
 | Sito | Pagine | Ultimo controllo | Stato |
 |---|---|---|---|
-| Gorilla Technology | 250 | 2026-11-24 06:03 UTC | ok |
+| Gorilla Technology | 250 | 2026-11-24 07:18 UTC | ok |
 | Gorilla Tech Capital | 112 | 2026-11-24 06:03 UTC | ok |
-| Gorilla IR | 4 | 2026-11-24 06:03 UTC | ok |
+| Gorilla IR | 4 | 2026-11-24 07:18 UTC | ok |
 
 ## Ultime modifiche rilevate
+
+### [Gorilla Technology | AI-powered Smart City Solutions & Technology](https://www.gorilla-technology.com/)
+2026-11-24 07:19 UTC · Gorilla Technology · pagina modificata
+
+- ~~NOMINATED FOR~~
+- ~~THE 2025~~
+- ~~SUSTAINABILITY AWARDS~~
+- ~~Supported By Nobel Sustainability Trust~~
+- ~~More than an accolade, this nomination affirms Gorilla’s mission to redefine technology as a force for long-term prosperity and ecological stewardship, inspiring a future that is intelligent, secure, and sustainable in equal measure.~~
+- ~~Read More Here~~
+- **Chairman & CEO Jay Chandan**
+- **PROUD TO RECEIVE 2026 Nobel Sustainability Trust MEDAL**
+- **of Recognition for Outstanding Contribution to Sustainability**
+- **Read More**
+- link aggiunto: https://investors.gorilla-technology.com/gorilla-technology-chairman-and-ceo-jay-chandan-awarded-2026-nobel-sustainability-trust-medal-for-outstanding-contribution-to-ai-for-public-good
+- link tolto: https://investors.gorilla-technology.com/gorilla-technology-honoured-with-2025-nobel-sustainability-trust-nomination-for-leadership-in-implementation
 
 ### [Press Releases - Gorilla Technology](https://investors.gorilla-technology.com/press-releases/)
 2026-11-23 13:20 UTC · Gorilla IR · pagina modificata
@@ -218,11 +234,6 @@ Ultimo aggiornamento: **2026-11-24 06:10 UTC**
 - **Client Impact, R&D, and Global Admin Center**
 
 ### [Annual Reports - Gorilla Technology](https://investors.gorilla-technology.com/annual-reports/)
-2026-11-02 21:23 UTC · Gorilla IR · pagina modificata
-
-- link tolto: https://continentalstock.com/
-
-### [Quarterly Results - Gorilla Technology](https://investors.gorilla-technology.com/quarterly-results/)
 2026-11-02 21:23 UTC · Gorilla IR · pagina modificata
 
 - link tolto: https://continentalstock.com/

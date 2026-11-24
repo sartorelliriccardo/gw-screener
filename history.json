@@ -1164,5 +1164,53 @@
    ],
    "chrome": 0
   }
+ },
+ {
+  "ts": "2026-11-24T07:19:02+00:00",
+  "source": "Gorilla Technology",
+  "type": "PAGINA MODIFICATA",
+  "url": "https://www.gorilla-technology.com/",
+  "text": [
+   "- NOMINATED FOR",
+   "- THE 2025",
+   "- SUSTAINABILITY AWARDS",
+   "- Supported By Nobel Sustainability Trust",
+   "- More than an accolade, this nomination affirms Gorilla’s mission to redefine technology as a force for long-term prosperity and ecological stewardship, inspiring a futur…",
+   "- Read More Here",
+   "+ Chairman & CEO Jay Chandan",
+   "+ PROUD TO RECEIVE 2026 Nobel Sustainability Trust MEDAL",
+   "+ of Recognition for Outstanding Contribution to Sustainability",
+   "+ Read More",
+   "link aggiunti: https://investors.gorilla-technology.com/gorilla-technology-chairman-and-ceo-ja…",
+   "link tolti: https://investors.gorilla-technology.com/gorilla-technology-honoured-with-2025-…"
+  ],
+  "detail": {
+   "page_title": "Gorilla Technology | AI-powered Smart City Solutions & Technology",
+   "title": null,
+   "desc": null,
+   "removed": [
+    "NOMINATED FOR",
+    "THE 2025",
+    "SUSTAINABILITY AWARDS",
+    "Supported By Nobel Sustainability Trust",
+    "More than an accolade, this nomination affirms Gorilla’s mission to redefine technology as a force for long-term prosperity and ecological stewardship, inspiring a future that is intelligent, secure, and sustainable in equal measure.",
+    "Read More Here"
+   ],
+   "n_removed": 6,
+   "added": [
+    "Chairman & CEO Jay Chandan",
+    "PROUD TO RECEIVE 2026 Nobel Sustainability Trust MEDAL",
+    "of Recognition for Outstanding Contribution to Sustainability",
+    "Read More"
+   ],
+   "n_added": 4,
+   "links_added": [
+    "https://investors.gorilla-technology.com/gorilla-technology-chairman-and-ceo-jay-chandan-awarded-2026-nobel-sustainability-trust-medal-for-outstanding-contribution-to-ai-for-public-good"
+   ],
+   "links_removed": [
+    "https://investors.gorilla-technology.com/gorilla-technology-honoured-with-2025-nobel-sustainability-trust-nomination-for-leadership-in-implementation"
+   ],
+   "chrome": 0
+  }
  }
 ]
